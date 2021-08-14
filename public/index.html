@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <style>
+        .count {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: rgb(167, 131, 89);
+            text-align: center;
+            vertical-align: center;
+        }
+
+
+        .fas {
+            font-size: 50px;
+            color: rgb(167, 131, 89);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mt-4 text-center">
+        <h3>互動小功能集結</h3>
+        <h6>JavaScript Review Portfolio</h6>
+    </div>
+
+    <!-- 計數器開始 -->
+    <div class="container my-5">
+        <h5>｜計數器 - 1｜</h5>
+        <p>製作一個網頁上可以點按後累加數字的功能，每按一次加 1</p>
+        <div class="count" id="count">
+            <p>0</p>
+        </div>
+
+    </div>
+    <!-- 計數器結束 -->
+
+    <div class="border"></div>
+
+    <!-- 擲骰子開始 -->
+    <div class="container my-5">
+        <h5>｜擲骰子｜</h5>
+        <p>線上和電腦互擲骰子的遊戲應用程式，然後判斷會員點數和是否獲勝，會各自出現相對應的骰子 icon</p>
+        <button class="btn btn-primary" id="send">擲骰子</button>
+        <br>
+        <i class="fas" id="userDice"></i>
+        <!-- <i class="fas fa-dice-two"></i>-->
+        <p id="userPoint">你的點數</p>
+        <i class="fas" id="computerDice"></i>
+        <p id="computerPoint">電腦的點數</p>
+        <p id="outcome">勝負結果</p>
+    </div>
+    <!-- 擲骰子結束 -->
+
+    <div class="border"></div>
+
+    <!-- 生日下拉選擇開始 -->
+    <div class="container my-5">
+        <h5>｜生日下拉選擇並判斷是否滿 18 歲｜</h5>
+        <p>使用 for 迴圈製作一個生日的下拉選擇介面(select)，分別有三個下拉選擇介面，西元年、月、日。並檢查是否滿 18 歲。</p>
+        <select name="" id="year">
+            <!-- <option value="0" id="">--- 請選擇 ---</option> -->
+        </select>
+        <select name="" id="month">
+            <!-- <option value="0" id="">--- 請選擇 ---</option> -->
+        </select>
+
+        <!-- disabled是為了讓使用者先選月份，後續連動跳出28/30/31天 -->
+        <select name="" id="date" disabled>
+            <!-- <option value="0" id="">--- 請選擇 ---</option> -->
+        </select>
+        <!-- 檢查是否滿18歲 -->
+        <button class="ml-3 btn btn-primary" id="sendDate">送出</button>
+        <h6 id="message"></h6>
+    </div>
+    <!-- 生日下拉選擇結束 -->
+
+    <div class="border"></div>
+
+    <!-- 猜拳開始 -->
+    <div class="container my-5">
+        <h5>｜猜拳（剪刀 / 石頭 / 布）遊戲｜</h5>
+        <p>線上和電腦猜拳的遊戲應用程式，並判斷會員目前猜的拳與是否獲勝。</p>
+        <button class="btn btn-dark pt-3 px-3" id="scissors">
+            <i class="fas fa-hand-scissors"></i>
+            <p class="mt-3">剪刀</p>
+        </button>
+
+        <button class="btn btn-dark pt-3 px-3" id="rock">
+            <i class="fas fa-hand-rock"></i>
+            <p class="mt-3">石頭</p>
+        </button>
+
+        <button class="btn btn-dark pt-3 px-3" id="paper">
+            <i class="fas fa-hand-paper"></i>
+            <p class="mt-3">布</p>
+        </button>
+
+        <p id="userHand">你的出拳</p>
+        <i class="fas" id="computerHandIcon"></i>
+        <p id="computerHand">電腦的出拳</p>
+
+        <p id="outcomeHand">勝負結果</p>
+    </div>
+    <!-- 猜拳結束 -->
+
+    <!-- 會員驗證
+    會員姓名： <input type="text" id="name" maxlength="3">
+    會員住址：<input type="text" id="address">
+    會員帳號：<input type="text" id="account">
+    會員密碼：<input type="text" id="password">
+    密碼確認：<input type="text" id="passwordCheck">
+    <button type="reset" id="send">送出</button>
+    <h1 id="message"></h1> -->
+    <script src="index.js"></script>
+    <!-- <script src="concept-memo.js"></script> -->
+</body>
+
+</html>
