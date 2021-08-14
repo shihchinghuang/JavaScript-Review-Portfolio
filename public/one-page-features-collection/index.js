@@ -134,11 +134,11 @@ send.addEventListener('click', function () {
   }"></i>`
 
   if (userRandom > computerRandom) {
-    outcome.innerHTML = '你贏了'
+    outcome.innerHTML = '勝負結果：你贏了'
   } else if (userRandom == computerRandom) {
-    outcome.innerHTML = '平手，再骰一次'
+    outcome.innerHTML = '勝負結果：平手，再骰一次'
   } else {
-    outcome.innerHTML = '電腦贏了'
+    outcome.innerHTML = '勝負結果：電腦贏了'
   }
 })
 // ------------------擲骰子------------------
@@ -312,7 +312,26 @@ const play = (userNumber) => {
   }"></i>`
   computerHand.innerHTML = `電腦的出拳：${title[computerNumber - 1]}`
 
-  // 判斷輸贏，距離是1的時候小的輸（使用者-電腦=-1時，使用者輸），
+  // 兩者相同時平手
+  if (userNumber === computerNumber) {
+    outcomeHand.innerHTML = '勝負結果：平手，再猜一次'
+  }
+
+  // 用距離判斷輸贏
+  const range = userNumber - computerNumber
+
+  // 使用者 - 電腦 = -2 時，使用者贏
+  // 使用者 - 電腦 = 1 時，使用者贏
+  if (range === -2 || range === 1) {
+    outcomeHand.innerHTML = '勝負結果：你贏了'
+  }
+
+  // 使用者 - 電腦 = -1 時，使用者輸
+  // 使用者 - 電腦 = 2 時，使用者輸
+  if (range === -1 || range === 2) {
+    outcomeHand.innerHTML = '勝負結果：電腦贏了'
+  }
+
   // if (computerNumber === 1) {
   //   outcomeHand.innerHTML = '平手，再猜一次'
   // }
@@ -334,3 +353,98 @@ paper.addEventListener('click', function () {
   play(3)
 })
 // ------------------猜拳------------------
+
+// ------------------抽卡------------------
+const draw = document.querySelector('#draw')
+const outcomeCard = document.querySelector('#outcomeCard')
+
+const randomCard = Math.floor(Math.random() * 100) + 1
+
+draw.addEventListener('click', function () {
+  console.log(randomCard)
+
+  // 1-3 五星卡；4-20 四星卡；21-100 三星卡
+  if (randomCard < 4) {
+    outcomeCard.innerHTML = '抽中五星卡'
+  }
+  if (4 <= randomCard < 21) {
+    outcomeCard.innerHTML = '抽中四星卡'
+  }
+  if (21 <= randomCard <= 100) {
+    outcomeCard.innerHTML = '抽中三星卡'
+  }
+})
+// ------------------抽卡------------------
+
+// ------------------日曆------------------
+const yearAndMoth = document.querySelector('#yearAndMoth')
+const title = document.querySelector('#title')
+const data = document.querySelector('#data')
+
+// new Date() 為產生物件的本地日期與時間
+const now = new Date()
+
+// 要得到今天的西元年使用Date物件的getFullYear()，要得到月份使用getMonth()(注意回傳為 0~11)，要得到日期使用getDate()(注意回傳值為 1-31)
+const nowY = now.getFullYear()
+const nowM = now.getMonth() + 1 // 回傳為0-11，所以要+1
+
+yearAndMoth.innerHTML = `${nowY} 年 ${nowM} 月`
+
+const weekList = [
+  '星期日',
+  '星期一',
+  '星期二',
+  '星期三',
+  '星期四',
+  '星期五',
+  '星期六',
+]
+
+let weekDayDisplay = ''
+
+// for 迴圈的寫法
+for (let i = 0; i < weekList.length; i++) {
+  weekDayDisplay += `<th class="border border-dark"> ${weekList[i]} </th>`
+}
+title.innerHTML = `<tr class="border border-dark"> ${weekDayDisplay} </tr>`
+
+// map + 箭頭函式的寫法
+// const weekListMap = weekList
+//   .map((v) => `<span class="m-1 border border-dark"> ${v} </span>`)
+//   .join('')
+// title.innerHTML = weekListMap
+
+// 要得到某年的某個月有幾天，可以用new Date(y, m, 0).getDate()，例如 2009 年的 9 月就是使用new Date(2009, 9, 0).getDate()
+const days = new Date(nowY, nowM, 0).getDate()
+
+// getDay() 括號中寫日期，可以得到 0-6 的值，代表是星期幾，其中 0 代表星期日
+const firstDay = new Date(nowY, nowM - 1, 14).getDay()
+
+// 日曆先用空陣列
+const daysDataArray = []
+
+// 補前面的空白
+for (let i = 0; i < firstDay; i++) {
+  daysDataArray.push('')
+}
+
+// 後面用 1~31 補，如果沒有 i+1 ，會變成 0~30
+for (let i = 0; i < days; i++) {
+  daysDataArray.push(i + 1)
+}
+
+// 呈現
+let daysDisplay = ''
+
+for (let i = 0; i < daysDataArray.length; i++) {
+  daysDisplay += `<td class="border border-dark">${daysDataArray[i]}</td>`
+
+  // 每七個換一行
+  if ((i + 1) % 7 === 0) {
+    daysDisplay += `</tr><tr>`
+  }
+}
+
+data.innerHTML = `<tr class="border border-dark">${daysDisplay}</tr>`
+
+// ------------------日曆------------------
