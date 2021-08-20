@@ -489,3 +489,65 @@ for (let i = 0; i < menuItems.length; i++) {
   })
 }
 // ------------------選單控制------------------
+
+// ------------------csv 資料以表格呈現------------------
+// 學生資料 row data：
+// 只有重音符號可以換行
+const rawData = `"學生姓名","國文","數學","英文"
+"陳小花",90,65,77
+"張大頭",80,75,60
+"李一百",100,60,85
+"黃中花",90,65,77
+"王中頭",80,75,60
+"李兩百",100,60,85`
+
+const dataTable = document.querySelector('#dataTable')
+
+// 把raw data變成陣列，用\n換行分割，一行為一個值
+const rawDataArray = rawData.split('\n')
+// 現在rawDataArray[0]="學生姓名","國文","數學","英文"
+// 現在rawDataArray[1]="陳小花",90,65,77
+// 現在rawDataArray[2]=""張大頭",80,75,60
+// 現在rawDataArray[3]=""李一百",100,60,85
+
+// 把 rawDataArray[0]再用,分割變成陣列，一項為一個值
+const headingsArray = rawDataArray[0].replaceAll('"', '').split(',')
+// headings[0]="學生姓名"
+// headings[1]="國文"
+// headings[2]="數學"
+// headings[3]="英文"
+
+// 處理表頭的呈現，和日曆大同小異
+let headingsDisplay = ''
+
+for (let i = 0; i < headingsArray.length; i++) {
+  headingsDisplay += `<th class="border border-dark"> ${headingsArray[i]} </th>`
+}
+
+dataTable.innerHTML = `<thead>
+<tr> ${headingsDisplay} </tr>
+</thead>`
+
+// 處理表格row的呈現
+let bodyDisplay = ''
+// 從1開始是因為0是表頭
+for (let i = 1; i < rawDataArray.length; i++) {
+  const rows = rawDataArray[i].replaceAll('"', '').split(',')
+  // rows = ["陳小花", "90", "65", "77"]
+  // rows = ["張大頭", "80", "75", "60"]
+  // rows = ["李一百", "100", "60", "85"]
+
+  bodyDisplay += `<tr>`
+
+  for (let j = 0; j < rows.length; j++) {
+    bodyDisplay += `<td class="border border-dark"> ${rows[j]} </td>`
+  }
+
+  bodyDisplay += `</tr>`
+}
+
+dataTable.innerHTML += `<tbody>
+ ${bodyDisplay}
+</tbody>`
+
+// ------------------csv 資料以表格呈現------------------
