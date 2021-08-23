@@ -34,9 +34,15 @@
             <input type="text" id="input" placeholder="Add your new todo here...">
             <button id="add">+</button>
         </div>
-        <ul id="item">
-            <!-- 裡面內容給 js 去增加 -->
-        </ul>
+        <select name="" class="filter">
+            <option value="all">All</option>
+            <option value="completed">completed</option>
+            <option value="uncompleted">uncompleted</option>
+        </select>
+        <div id="item">
+            <ul id="todo"></ul>
+        </div>
+
         <img class="w-50" src="./humaaans.png" alt="">
     </div>
 

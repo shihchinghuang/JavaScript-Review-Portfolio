@@ -88,9 +88,11 @@ li{
     padding: 0 20px;
 }
 
-.li-checked{
+.checked{
     background-color: #CB997E;
     text-decoration:line-through;
+    border-radius: 5px;
+
 }
 
 .trash-icon{
