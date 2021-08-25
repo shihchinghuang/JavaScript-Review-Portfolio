@@ -24,6 +24,8 @@
         href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Noto+Sans+TC:wght@100&family=Nunito:wght@200&display=swap"
         rel="stylesheet">
 
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 
 <body>
@@ -36,15 +38,18 @@
             <input type="text" id="input" placeholder="Add your new todo here...">
             <button id="add">+</button>
         </div>
-        <div class="select">
+        <!-- <div class="select">
             <select name="todos" class="filter">
                 <option value="all">All</option>
                 <option value="completed">Completed</option>
                 <option value="uncompleted">Uncompleted</option>
             </select>
-        </div>
+        </div> -->
+        <button class="all btn btn-primary">全部</button>
+        <button class="completed btn btn-primary">已完成</button>
+        <button class="uncompleted btn btn-primary">未完成</button>
         <ul id="todo"></ul>
-        <img class="w-50" src="./humaaans.png" alt="">
+        <img class="w-50 animate__fadeIn" src="./meditating.svg" alt="">
     </div>
 
 

@@ -61,7 +61,6 @@ img{
 input{
     width: 100%;
     height: 48px;
-    margin-bottom:  5%;
     padding: 20px;
     border: #DDBEA9 2px solid;
     border-top-left-radius: 5px;
@@ -144,4 +143,10 @@ button:hover{
 .fall{
     transform: translatex(200px);
     opacity: 0;
+}
+
+.filter{
+    margin: 3% 0;
+    border: none;
+    padding: .5rem;
 }
