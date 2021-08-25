@@ -9,12 +9,24 @@ const input = document.querySelector("#input");
 const todo = document.querySelector("#todo");
 const filter = document.querySelector(".filter");
 
-document.addEventListener("DOMContentLoaded", getLocalTodos);
+// 載入畫面游標停在 input（也可以在html input 加 autofocus）：
+// <input autofocus type="text" id="input" placeholder="Add your new todo here...">
+// window.onload() 是網頁載完後執行的杜做
+window.onload = function () {
+  input.focus();
+};
+
 // 頁面 load 進來就會取得上次存在 localstorage 的資料
+document.addEventListener("DOMContentLoaded", getLocalTodos);
 
 add.addEventListener("click", addTodo);
+// add.addEventListener("keypress", addTodo);
 todo.addEventListener("click", deleteCheckTodo);
 filter.addEventListener("click", filterTodo);
+
+// if (e.key === "Enter") {
+//   addTodo();
+// }
 
 //-----新增待辦事項-----
 function addTodo(e) {

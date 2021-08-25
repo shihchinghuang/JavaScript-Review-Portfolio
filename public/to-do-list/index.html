@@ -27,6 +27,8 @@
 </head>
 
 <body>
+    <!-- 參考教學： https://www.youtube.com/watch?v=Ttf3CEsEwMQ -->
+    <!-- 網頁配色： https://coolors.co/cb997e-ddbea9-ffe8d6-b7b7a4-a5a58d-6b705c -->
 
     <div class="todo">
         <h3>- Todo APP -</h3>
@@ -34,15 +36,14 @@
             <input type="text" id="input" placeholder="Add your new todo here...">
             <button id="add">+</button>
         </div>
-        <select name="" class="filter">
-            <option value="all">All</option>
-            <option value="completed">completed</option>
-            <option value="uncompleted">uncompleted</option>
-        </select>
-        <div id="item">
-            <ul id="todo"></ul>
+        <div class="select">
+            <select name="todos" class="filter">
+                <option value="all">All</option>
+                <option value="completed">Completed</option>
+                <option value="uncompleted">Uncompleted</option>
+            </select>
         </div>
-
+        <ul id="todo"></ul>
         <img class="w-50" src="./humaaans.png" alt="">
     </div>
 
