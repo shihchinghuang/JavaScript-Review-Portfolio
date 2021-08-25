@@ -43,19 +43,22 @@ img{
     margin-top: 5%;
 }
 
-.todo div, .todo ul{
-    width: 100%;
-    margin: auto;
-}
-
 .todo li{
     display: flex;
     justify-content: space-between;
 }
 
+.input-filter{
+    margin: 0 0 5% 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
 .input-field{
-    width: 100%;
-    margin-top: 10%;
+    display: flex;
+    width: 70%;
+    max-width: 100%;
 }
 
 input{
@@ -67,10 +70,11 @@ input{
     border-bottom-left-radius: 5px;
     background-color: transparent;
     border-right: none;
+    
 }
 
 button{
-    width: 48px;
+    min-width: 48px;
     height: 48px;
     border: none;
     background-color: #DDBEA9;
@@ -86,6 +90,32 @@ button:hover{
     color: #FFE8D6;
 }
 
+.select{
+    display: flex;
+    cursor: pointer;
+    /* flex: 3 1 110px; */
+    justify-content: flex-end;
+    max-width: 100%;
+}
+
+#dropdown{
+    color: #FFE8D6;
+    font-size: 20px;
+    width: 48px;
+    height: 48px;
+    pointer-events: none;
+}
+
+.filter{
+    cursor: pointer;
+    border: #DDBEA9 2px solid;
+    padding: .5rem;
+    height: 48px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-color: #FFE8D6;
+    appearance:none;
+}
 
 .item{
     position: relative;
@@ -145,8 +175,16 @@ button:hover{
     opacity: 0;
 }
 
-.filter{
-    margin: 3% 0;
-    border: none;
-    padding: .5rem;
+@media screen and (max-width:1190px) {
+    .input-filter{
+        display: block;
+    }
+    .input-field{
+        margin-bottom: 5%;
+        width: 100%;
+
+    }
+    .select{
+        justify-content: flex-end;
+    }
 }

@@ -34,20 +34,25 @@
 
     <div class="todo">
         <h3>- Todo APP -</h3>
-        <div class="input-field d-flex justify-content-between">
-            <input type="text" id="input" placeholder="Add your new todo here...">
-            <button id="add">+</button>
+        <div class="input-filter">
+            <div class="input-field">
+                <input type="text" id="input" placeholder="Add your new todo here...">
+                <button id="add">+</button>
+            </div>
+            <div class="select">
+                <select name="todos" class="filter">
+                    <option value="all">All</option>
+                    <option value="completed">Completed</option>
+                    <option value="uncompleted">Uncompleted</option>
+                </select>
+                <button id="dropdown">▾</button>
+            </div>
         </div>
-        <!-- <div class="select">
-            <select name="todos" class="filter">
-                <option value="all">All</option>
-                <option value="completed">Completed</option>
-                <option value="uncompleted">Uncompleted</option>
-            </select>
-        </div> -->
-        <button class="all btn btn-primary">全部</button>
+
+        <!-- 用按鈕篩選，尚未成功 -->
+        <!-- <button class="all btn btn-primary">全部</button>
         <button class="completed btn btn-primary">已完成</button>
-        <button class="uncompleted btn btn-primary">未完成</button>
+        <button class="uncompleted btn btn-primary">未完成</button> -->
         <ul id="todo"></ul>
         <img class="w-50 animate__fadeIn" src="./meditating.svg" alt="">
     </div>

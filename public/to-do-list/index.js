@@ -1,8 +1,7 @@
-// 0823 待辦
 // select 要選兩次才會觸發篩選
-// select 的排版，或是換成按鈕看看
 // 研究編輯，或把編輯 icon 拿掉
-// sweet alert 微調
+// 沒資料的時候顯示文字
+// 打勾的要傳到localstorage
 
 const add = document.querySelector("#add");
 const input = document.querySelector("#input");
@@ -11,7 +10,7 @@ const filter = document.querySelector(".filter");
 
 // 載入畫面游標停在 input（也可以在html input 加 autofocus）：
 // <input autofocus type="text" id="input" placeholder="Add your new todo here...">
-// window.onload() 是網頁載完後執行的杜做
+// window.onload() 是網頁載完後執行的動作
 window.onload = function () {
   input.focus();
 };
@@ -22,11 +21,18 @@ document.addEventListener("DOMContentLoaded", getLocalTodos);
 add.addEventListener("click", addTodo);
 // add.addEventListener("keypress", addTodo);
 todo.addEventListener("click", deleteCheckTodo);
-// filter.addEventListener("click", filterTodo);
+filter.addEventListener("click", filterTodo);
+input.addEventListener("keyup", enterSend);
 
-// if (e.key === "Enter") {
-//   addTodo();
-// }
+//-----按 enter 等於滑鼠按下 add btn-----
+// How TO - Trigger Button Click on Enter https://www.w3schools.com/howto/howto_js_trigger_button_enter.asp
+// 事件監聽觸發條件 https://www.fooish.com/javascript/dom/event.html
+// 在 input 設定監聽器，當滑鼠按下並放開鍵盤按鍵時（keyup），就執行按下 add
+function enterSend(j) {
+  if (j.keyCode === 13) {
+    add.click();
+  }
+}
 
 //-----新增待辦事項-----
 function addTodo(e) {
@@ -83,6 +89,7 @@ function addTodo(e) {
 
     // 輸入之後存進 localstorage
     saveLocalTodos(input.value);
+
     // 清空輸入框
     input.value = "";
   }
@@ -121,36 +128,36 @@ function deleteCheckTodo(e) {
   }
 }
 
-//-----篩選已完成 / 未完成的待辦事項-----
-// function filterTodo(e) {
-//   const todos = todo.childNodes;
-//   console.log("select");
+//-----下拉選單篩選已完成 / 未完成的待辦事項-----
+function filterTodo(e) {
+  const todos = todo.childNodes;
+  console.log("select");
 
-//   todos.forEach(function (t) {
-//     // value 指的是 html 中 <option value="all">All</option> 的 value
-//     switch (e.target.value) {
-//       case "all":
-//         t.style.display = "flex";
-//         break;
-//       case "completed":
-//         if (t.classList.contains("checked")) {
-//           t.style.display = "flex";
-//           console.log("check");
-//         } else {
-//           t.style.display = "none";
-//         }
-//         break;
-//       case "uncompleted":
-//         if (!t.classList.contains("checked")) {
-//           t.style.display = "flex";
-//           console.log("not");
-//         } else {
-//           t.style.display = "none";
-//         }
-//         break;
-//     }
-//   });
-// }
+  todos.forEach(function (t) {
+    // value 指的是 html 中 <option value="all">All</option> 的 value
+    switch (e.target.value) {
+      case "all":
+        t.style.display = "flex";
+        break;
+      case "completed":
+        if (t.classList.contains("checked")) {
+          t.style.display = "flex";
+          console.log("check");
+        } else {
+          t.style.display = "none";
+        }
+        break;
+      case "uncompleted":
+        if (!t.classList.contains("checked")) {
+          t.style.display = "flex";
+          console.log("not");
+        } else {
+          t.style.display = "none";
+        }
+        break;
+    }
+  });
+}
 
 //-----將資料存進 localstorage-----
 function saveLocalTodos(t) {
@@ -162,7 +169,7 @@ function saveLocalTodos(t) {
     todos = JSON.parse(localStorage.getItem("todos"));
     // 有的話就把拿到的陣列從 localstorage 取出，JSON.parse() 把json 字串變成 js 的數值
   }
-  todos.push(t); // 加入新的資料（新的在最後面，如果新的要在最前面，用push）
+  todos.push(t); // 加入新的資料（新的在最前面，如果新的要在最前面，用 unshift），但 unshift 不知為何失效
   localStorage.setItem("todos", JSON.stringify(todos));
   // 把東西存進 localstorage，JSON.stringify() 是將 js 數值變 json 字串
 }
@@ -180,7 +187,6 @@ function getLocalTodos() {
 
   todos.forEach(function (t) {
     // ---把上面新增待辦事項的部分複製過來---
-
     // 製造 <div class="item"></div>
     const item = document.createElement("div");
     item.classList.add("item", "mb-2");
@@ -246,50 +252,50 @@ function removeLocalTodos(todo) {
   localStorage.setItem("todos", JSON.stringify(todos));
 }
 
-const all = document.querySelector(".all");
-const completed = document.querySelector(".completed");
-const uncompleted = document.querySelector(".uncompleted");
+// 用按鈕篩選資料，尚未成功
+// const all = document.querySelector(".all");
+// const completed = document.querySelector(".completed");
+// const uncompleted = document.querySelector(".uncompleted");
 
-all.addEventListener("click", function () {
-  todo.style.display = "block";
-  console.log("select");
-});
+// all.addEventListener("click", function () {
+//   todo.style.display = "block";
+//   console.log("select");
+// });
 
-completed.addEventListener("click", function (e) {
-  // childNodes 是該標籤以下的子節點
-  const todos = todo.childNodes;
-  // console.log(todos);
+// completed.addEventListener("click", function (e) {
+//   // childNodes 是該標籤以下的子節點
+//   const todos = todo.childNodes;
+//   // console.log(todos);
 
-  // childNodes 生成的 NodeList 是類陣列，要轉成陣列用 Array.from()
-  const todosArray = Array.from(todos);
-  console.log(todosArray);
+//   // childNodes 生成的 NodeList 是類陣列，要轉成陣列用 Array.from()
+//   const todosArray = Array.from(todos);
+//   // console.log(todosArray);
 
-  // 從 todosArray 中篩選出有 checked 這個 class 的值
-  const completedTodos = todosArray.filter((todo) =>
-    todo.classList.contains("checked")
-  );
-  // console.log(completedTodos);
+//   // 從 todosArray 中篩選出有 checked 這個 class 的值
+//   const completedTodos = todosArray.filter((todo) =>
+//     todo.classList.contains("checked")
+//   );
+//   // console.log(completedTodos);
 
-  // 取出 completedTodos 裏面所有有 checked 這個 class 的內容，不要是陣列
-  for (let i = 0; i < completedTodos.length; i++) {
-    completedTodo = completedTodos[i];
-    console.log(completedTodo);
+//   // 取出 completedTodos 裏面所有有 checked 這個 class 的內容，不要是陣列
+//   for (let i = 0; i < completedTodos.length; i++) {
+//     completedTodo = completedTodos[i];
+//     console.log(completedTodo);
 
-    // 這樣做會讓已完成的排到後面;
-    todo.appendChild(completedTodo);
-    todo.style.display = "block";
-  }
+//     todo.innerText = completedTodo;
+//   }
 
-  // for (let i = 0; i < todosArray.length; i++) {
-  //   completedTodos = todosArray[i];
-  //   console.log(completedTodos);
+//   for (let i = 0; i < todosArray.length; i++) {
+//     let completedTodos;
+//     completedTodos = todosArray[i];
+//     console.log(completedTodos);
 
-  //   completedTodos.forEach(function (t) {
-  //     if (completedTodos.classList.contains("checked")) {
-  //       t.style.display = "flex";
-  //     } else {
-  //       t.style.display = "none";
-  //     }
-  //   });
-  // }
-});
+//     completedTodos.forEach(function (t) {
+//       if (completedTodos.classList.contains("checked")) {
+//         t.style.display = "flex";
+//       } else {
+//         t.style.display = "none";
+//       }
+//     });
+//   }
+// });
