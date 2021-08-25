@@ -44,7 +44,7 @@ function addTodo(e) {
     // sweet alert
     swal("請輸入內容～", {
       buttons: false,
-      timer: 800,
+      timer: 850,
       icon: "./loving.svg",
     });
   } else {
@@ -130,8 +130,9 @@ function deleteCheckTodo(e) {
 
 //-----下拉選單篩選已完成 / 未完成的待辦事項-----
 function filterTodo(e) {
+  // childNodes 是該標籤以下的子節點
   const todos = todo.childNodes;
-  console.log("select");
+  // console.log(todos);
 
   todos.forEach(function (t) {
     // value 指的是 html 中 <option value="all">All</option> 的 value
