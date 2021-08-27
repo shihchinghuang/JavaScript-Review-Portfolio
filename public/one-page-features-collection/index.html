@@ -13,54 +13,56 @@
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <style>
-        /* 計數器用 */
-        .count {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background-color: rgb(167, 131, 89);
-            text-align: center;
-            vertical-align: center;
-        }
 
-        /* icon 用 */
-        .fas {
-            font-size: 50px;
-            color: rgb(167, 131, 89);
-        }
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Noto+Sans+TC:wght@900&family=Nunito:wght@200&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Aldrich&family=Azeret+Mono&family=Monofett&family=Play:wght@700&family=Press+Start+2P&display=swap"
+        rel="stylesheet">
 
-        /* 選單控制用 */
-        ul {
-            background-color: rgb(167, 131, 89);
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
-
-        li a {
-            display: block;
-            color: black;
-            text-align: center;
-            padding: 10px;
-            /* padding: 10px; */
-        }
-
-        .enter {
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-    </style>
+    <!-- css link -->
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-    <div class="mt-4 text-center">
-        <h3>互動小功能集結</h3>
-        <h6>JavaScript Review Portfolio</h6>
+    <div class="nav">
+        <p>JavaScript<br>Mini Games</p>
+        <a href="#count-section">計數器</a>
+        <a href="#dice-section">擲骰子</a>
+        <a href="">猜拳</a>
+        <a href="">抽卡</a>
+        <a href="">終極密碼</a>
+        <a href="">陣列反轉</a>
+        <a href="">找最大值</a>
+        <a href="">累加數字</a>
     </div>
-
+    <div class="toTop">
+        ⬆<br>to top
+    </div>
+    <h1 class="header">JavaScript<br>Mini Games</h1>
+    <div class="section container">
+        <img class="w-25 mt-5" src="./img/swinging.svg" alt="">
+        <div class="catelogue">
+            <div class="top">
+                <a href="#count-section " class="game-card">計數器</a>
+                <a href="#dice-section" class="game-card">擲骰子</a>
+                <div class="game-card">猜拳</div>
+                <div class="game-card">抽卡</div>
+            </div>
+            <div class="bottom">
+                <div class="game-card">終極密碼</div>
+                <div class="game-card">陣列反轉</div>
+                <div class="game-card">找最大值</div>
+                <div class="game-card">累加數字</div>
+            </div>
+        </div>
+    </div>
     <!-- 計數器開始 -->
-    <div class="container my-5">
+    <div id="count-section" class="container my-5">
         <h5>｜計數器 - 1｜</h5>
         <p>製作一個網頁上可以點按後累加數字的功能，每按一次加 1</p>
         <div class="count" id="count">
@@ -72,7 +74,7 @@
     <div class="border"></div>
 
     <!-- 擲骰子開始 -->
-    <div class="container my-5">
+    <div id="dice-section" class="container my-5">
         <h5>｜擲骰子｜</h5>
         <p>線上和電腦互擲骰子的遊戲應用程式，然後判斷會員點數和是否獲勝，會各自出現相對應的骰子 icon</p>
         <button class="btn btn-primary" id="send">擲骰子</button>

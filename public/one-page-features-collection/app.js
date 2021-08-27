@@ -683,3 +683,24 @@ function addUp() {
 }
 
 // ------------------累加數字------------------
+
+// ------------------累加數字------------------
+const nav = document.querySelector(".nav");
+const toTop = document.querySelector(".toTop");
+
+window.addEventListener("scroll", (e) => {
+  if (window.pageYOffset > 400) {
+    nav.style.display = "flex";
+    nav.style.position = "fixed";
+    nav.style.top = "0";
+    nav.style.width = "100vw";
+    toTop.style.display = "block";
+    toTop.style.position = "fixed";
+    toTop.style.bottom = "3rem";
+    toTop.style.right = "3rem";
+  } else {
+    nav.style.display = "none";
+    nav.style.position = "static";
+    toTop.style.display = "none";
+  }
+});

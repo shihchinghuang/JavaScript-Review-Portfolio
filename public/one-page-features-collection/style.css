@@ -1,0 +1,152 @@
+ /* 配色參考 https://coolors.co/264653-2a9d8f-e9c46a-f4a261-e76f51 */
+ 
+ *{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-family: 'Aldrich', sans-serif;
+}
+
+body{
+    background: #22c0c380;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #6B705C, #B7B7A4);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F4A261, #e9c56ac2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /* background-size: 100% 100%; */
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    min-width: 100%;
+    /* position: relative; */
+}
+
+.nav{
+    background-color: #264653;
+    color: #E9C46A;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 3rem;
+    display: none;
+    border-bottom: .3rem #2A9D8F solid; 
+}
+
+.nav a{
+    color: #E9C46A;
+    text-decoration: none;
+}
+
+.nav a:hover{
+    color: #2A9D8F;
+}
+
+.nav p{
+    margin:  .5rem 0;
+}
+
+.toTop{
+    width: 5rem;
+    height: 5rem;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #264653;
+    color: #E9C46A;
+    padding-top: .8rem;
+    display: none;
+}
+
+.toTop:hover{
+    border: .3rem #2A9D8F solid;
+    cursor: pointer;
+    padding-top: .5rem;
+
+}
+
+h1{
+    font-size: 3rem;
+    font-family: 'Press Start 2P', cursive;
+    margin: 0 0 3rem 0;
+    letter-spacing: .5rem;
+    line-height: 5rem;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.section{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.catelogue{
+    width: 60%;
+    height: 20rem;
+}
+
+.catelogue a{
+    text-decoration: none;
+}
+
+.game-card{
+    flex: 1 1 15%;
+    height: 10rem;
+    margin: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 5px;
+    /* background-color: #; */
+    color: #264653;
+    /* line-height: 10rem; */
+    text-align: center;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 1.5rem;
+    line-height: 10rem;
+}
+
+.game-card:hover{
+    box-shadow: #E76F51 0px 0px 0px 2px inset,  #264653 10px 10px;
+    color: #2A9D8F;
+    cursor: pointer;
+}
+
+.top,.bottom{
+    display: flex;
+}
+
+@media screen {
+    
+}
+
+ /* 計數器用 */
+        .count {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: rgb(167, 131, 89);
+            text-align: center;
+            vertical-align: center;
+        }
+
+        /* icon 用 */
+        .fas {
+            font-size: 50px;
+            color: rgb(167, 131, 89);
+        }
+
+        /* 選單控制用 */
+        ul {
+            background-color: rgb(167, 131, 89);
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        li a {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 10px;
+            /* padding: 10px; */
+        }
+
+        .enter {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
