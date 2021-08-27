@@ -1,6 +1,6 @@
 # JavaScript-Review-Portfolio
 
-* [one-page-features-collection]() <br>
+* [one-page-features-collection](https://shihchinghuang.github.io/JavaScript-Review-Portfolio/public/one-page-features-collection/index.html) <br>
 ▸ 計數器 <br>
 ▸ 擲骰子 <br>
 ▸ 猜拳 <br>
