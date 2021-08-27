@@ -45,7 +45,7 @@ function addTodo(e) {
     swal("請輸入內容～", {
       buttons: false,
       timer: 850,
-      icon: "./loving.svg",
+      icon: "./img/loving.svg",
     });
   } else {
     // 製造以下東西
