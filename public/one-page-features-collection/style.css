@@ -81,8 +81,13 @@ h1{
     align-items: center;
 }
 
+.section img{
+    width: 25%;
+    margin-top: 3rem;
+}
+
 .catelogue{
-    width: 60%;
+    min-width: 60%;
     height: 20rem;
 }
 
@@ -92,7 +97,7 @@ h1{
 
 .game-card{
     flex: 1 1 15%;
-    height: 10rem;
+    min-height: 10rem;
     margin: 1rem;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 5px;
@@ -114,8 +119,32 @@ h1{
     display: flex;
 }
 
-@media screen {
+@media screen and (max-width: 1000px) {
+    h1{
+        font-size: 1.2rem;
+        line-height: 3rem;
+        margin: 1rem;
+    }
+    .section{
+        display: block;
+        text-align: center;
+    }
+    .section img{
+        margin: 1rem;
+    }
+
+    .catelogue{
+        margin: auto;
+        width: fit-content;
+        padding: 0;
+    }
     
+    .game-card{
+        font-size: 1rem;
+        line-height: normal;
+        min-height: .8rem;
+        padding: 1rem;
+    }
 }
 
  /* 計數器用 */
