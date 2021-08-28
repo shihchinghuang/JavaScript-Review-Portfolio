@@ -90,6 +90,9 @@ function addTodo(e) {
     // 輸入之後存進 localstorage
     saveLocalTodos(input.value);
 
+    // 新增時的動畫
+    item.style.animation = "scaleUp .5s forwards";
+
     // 清空輸入框
     input.value = "";
   }

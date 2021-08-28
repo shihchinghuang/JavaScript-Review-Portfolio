@@ -215,3 +215,15 @@ button:hover{
         align-items: center;
     }
 }
+
+@keyframes scaleUp {
+    from {
+        left: -200px;
+        opacity: .2;
+    }
+    to{
+        left: 0;
+        opacity: 1;
+    }
+    
+}
