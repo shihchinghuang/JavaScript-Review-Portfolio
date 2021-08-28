@@ -1,10 +1,14 @@
 # JavaScript-Review-Portfolio
 
-* [one-page-features-collection](https://shihchinghuang.github.io/JavaScript-Review-Portfolio/public/one-page-features-collection/index.html) <br>
+* [JavaScript-Mini-Games](https://shihchinghuang.github.io/JavaScript-Review-Portfolio/public/JavaScript-Mini-Games/index.html) <br>
 ▸ 計數器 <br>
 ▸ 擲骰子 <br>
 ▸ 猜拳 <br>
-▸ 日曆 <br>
+▸ 抽卡 <br>
+▸ 終極密碼 <br>
+▸ 陣列反轉 <br>
+▸ 找最大值 <br>
+▸ 累加數字 <br>
 
 * [to-do-list (Responsive)](https://shihchinghuang.github.io/JavaScript-Review-Portfolio/public/to-do-list/index.html) <br>
 ▸ 已完成功能：<br>1. 載入頁面滑鼠游標停留在 input 框 <br>
