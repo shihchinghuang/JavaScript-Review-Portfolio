@@ -1,6 +1,6 @@
 # JavaScript-Review-Portfolio
 
-* [JavaScript-Mini-Games](https://shihchinghuang.github.io/JavaScript-Review-Portfolio/public/JavaScript-Mini-Games/index.html) <br>
+* [JavaScript-Mini-Games (Responsive)](https://shihchinghuang.github.io/JavaScript-Review-Portfolio/public/JavaScript-Mini-Games/index.html) <br>
 ▸ 計數器 <br>
 ▸ 擲骰子 <br>
 ▸ 猜拳 <br>
