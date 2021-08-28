@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>JavaScript Mini Games</title>
 
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/85ec32d5f6.js" crossorigin="anonymous"></script>
@@ -26,10 +26,13 @@
 
     <!-- css link -->
     <link rel="stylesheet" href="./style.css">
+
+    <!-- aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="nav">
+    <div data-aos="fade-down" class="nav">
         <p>JavaScript<br>Mini Games</p>
         <a href="#count-section">計數器</a>
         <a href="#dice-section">擲骰子</a>
@@ -40,13 +43,13 @@
         <a href="">找最大值</a>
         <a href="">累加數字</a>
     </div>
-    <div class="toTop">
+    <div data-aos="fade-down" class="toTop">
         ⬆<br>to top
     </div>
-    <h1 class="header">JavaScript<br>Mini Games</h1>
+    <h1 class="header" data-aos="fade-down">JavaScript<br>Mini Games</h1>
     <div class="section container">
-        <img class="w-25 mt-5" src="./img/swinging.svg" alt="">
-        <div class="catelogue">
+        <img data-aos="fade-right" class="w-25 mt-5" src="./img/swinging.svg" alt="">
+        <div data-aos="fade-left" class="catelogue">
             <div class="top">
                 <a href="#count-section " class="game-card">計數器</a>
                 <a href="#dice-section" class="game-card">擲骰子</a>
@@ -263,9 +266,14 @@
     密碼確認：<input type="text" id="passwordCheck">
     <button type="reset" id="send">送出</button>
     <h1 id="message"></h1> -->
+    <!-- js file -->
     <script src="app.js"></script>
-    <!-- <script src="concept-memo.js"></script> -->
 
+    <!-- aos -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>
