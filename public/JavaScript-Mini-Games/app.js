@@ -1,3 +1,30 @@
+// ------------------nav漢堡選單------------------
+// 動畫參考 https://www.youtube.com/watch?v=gXkqy0b4M5g
+const burger = document.querySelector(".burger");
+const navA = document.querySelector(".nav-a");
+const navLi = document.querySelectorAll(".nav-a li");
+
+burger.addEventListener("click", function () {
+  navA.classList.toggle("nav-a-active");
+
+  // 單個連結一個一個慢慢進場的動畫
+  navLi.forEach((link, index) => {
+    if (link.style.animation) {
+      link.style.animation = "";
+    } else {
+      link.style.animation = `navLiFade 0.5s ease forwards ${index / 8 + 0.3}s`;
+    }
+
+    // index / 7 代表一個一個陸續差幾秒進場
+    console.log(index / 7);
+  });
+
+  // 漢堡從三條線變叉叉的動畫
+  burger.classList.toggle("burger-line-ani");
+});
+
+// ------------------nav漢堡選單------------------
+
 // ------------------計數器 - 1------------------
 // js是物件導向程式語言，有兩大物件，window & document，window 物件包含網址列，操控上一頁下一頁等，document指的是中間顯示文件的內容。
 // https://developer.mozilla.org/zh-TW/docs/Web/API/Window
@@ -341,7 +368,7 @@ function addUpTo(n) {
   }
   return result;
 }
-console.log(addUpTo(4));
+// console.log(addUpTo(4));
 
 function addUp() {
   finalNum.innerText = addUpTo(parseInt(addInput.value));

@@ -16,24 +16,25 @@ body{
     /* background-size: 100% 100%; */
     background-repeat: no-repeat;
     min-height: 100vh;
-    min-width: 100%;
+    min-width: 100vw;
     /* position: relative; */
 }
 
 .nav{
+    min-height: 10vh;
     background-color: #264653;
     color: #E9C46A;
     justify-content: space-around;
     align-items: center;
     padding: 0 3rem;
     display: none;
-    border-bottom: .3rem #2A9D8F solid; 
+    border-bottom: .3rem #2A9D8F solid;
 }
-
 
 .nav a{
     color: #E9C46A;
     text-decoration: none;
+    letter-spacing: 2px;
 }
 
 .nav a:hover{
@@ -42,6 +43,15 @@ body{
 
 .nav p{
     margin:  .5rem 0;
+}
+
+.nav-a{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0;
+    min-width: 70%;
 }
 
 .toTop{
@@ -63,6 +73,7 @@ body{
     text-decoration: none;
     color: #E9C46A;
 }
+
 
 h1{
     font-size: 3rem;
@@ -152,11 +163,74 @@ h1{
 }
 
 @media screen and (max-width: 800px) {
+    body{
+        position: relative;
+        overflow-x: hidden;
+    }
     .nav{
         display: flex;
-        flex-direction: column;
-        padding-bottom: .5rem;
+        justify-content: space-between;
     }
+
+    .burger{
+        cursor: pointer;
+    }
+
+    .burger div{
+        width: 2rem;
+        height: .25rem;
+        border-radius: 2px;
+        background-color: #E9C46A;
+        margin: 4px;
+        transition: ease all .5s;
+    }
+
+    .nav-a{
+        background-color: #264653;
+        min-width: 10rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: absolute;
+        right: 0;
+        top: 10vh;
+        min-height: 60vh;
+        padding: 2rem 0;
+        transform: translateX(100%);
+    }
+
+    .nav-a li{
+        opacity: 0;
+    }
+    
+    .nav-a-active{
+        transform: translateX(0);
+    }
+
+    /* nav的字一個一個陸續進場的動畫 */
+    @keyframes navLiFade {
+        from{
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to{
+            opacity: 1;
+            transform: translateX(0px);
+
+        }
+    }
+
+    /* 漢堡從三條線變叉叉的動畫 */
+    .burger-line-ani .line1{
+        transform: rotate(-45deg) translate(-5px,6px);
+    }
+    .burger-line-ani .line2{
+        opacity: 0;
+    }
+    .burger-line-ani .line3{
+        transform: rotate(45deg) translate(-5px,-6px);
+    }
+
 }
  /* 計數器用 */
         .count {

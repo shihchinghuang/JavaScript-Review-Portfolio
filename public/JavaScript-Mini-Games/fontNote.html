@@ -53,17 +53,37 @@
         .e {
             font-family: 'Press Start 2P', cursive;
         }
+
+        .burger {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: stretch;
+        }
+
+        .burger div {
+            width: 1.8rem;
+            height: .2rem;
+            border-radius: 2px;
+            background-color: black;
+            margin: 2px;
+        }
     </style>
 </head>
 
 
 <body>
+
     <h1 data-aos="fade-down" class="a">Aldrich</h1>
     <h1 class="b">Azeret</h1>
     <h1 class="c">Monofett</h1>
     <h1 class="d">Play</h1>
     <h1 class="e">Press</h1>
-
+    <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
