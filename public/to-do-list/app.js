@@ -177,11 +177,7 @@ function saveLocalTodos(t) {
 
 //-----空清單預設文字-----
 function checkLocalTodos() {
-  let todos;
-  if (
-    localStorage.getItem("todos") === [] ||
-    localStorage.getItem("todos") === null
-  ) {
+  if (JSON.parse(localStorage.getItem("todos")) === []) {
     noTodo.style.display = "flex";
     console.log("empty");
   } else {
@@ -270,49 +266,49 @@ function removeLocalTodos(todo) {
 }
 
 // 用按鈕篩選資料，尚未成功
-const all = document.querySelector(".all");
-const completed = document.querySelector(".completed");
-const uncompleted = document.querySelector(".uncompleted");
+// const all = document.querySelector(".all");
+// const completed = document.querySelector(".completed");
+// const uncompleted = document.querySelector(".uncompleted");
 
-all.addEventListener("click", function () {
-  todo.style.display = "block";
-  console.log("select");
-});
+// all.addEventListener("click", function () {
+//   todo.style.display = "block";
+//   console.log("select");
+// });
 
-completed.addEventListener("click", function (e) {
-  // childNodes 是該標籤以下的子節點
-  const todos = todo.childNodes;
-  // console.log(todos);
+// completed.addEventListener("click", function (e) {
+//   // childNodes 是該標籤以下的子節點
+//   const todos = todo.childNodes;
+//   // console.log(todos);
 
-  // childNodes 生成的 NodeList 是類陣列，要轉成陣列用 Array.from()
-  const todosArray = Array.from(todos);
-  // console.log(todosArray);
+//   // childNodes 生成的 NodeList 是類陣列，要轉成陣列用 Array.from()
+//   const todosArray = Array.from(todos);
+//   // console.log(todosArray);
 
-  // 從 todosArray 中篩選出有 checked 這個 class 的值
-  const completedTodos = todosArray.filter((todo) =>
-    todo.classList.contains("checked")
-  );
-  // console.log(completedTodos);
+//   // 從 todosArray 中篩選出有 checked 這個 class 的值
+//   const completedTodos = todosArray.filter((todo) =>
+//     todo.classList.contains("checked")
+//   );
+//   // console.log(completedTodos);
 
-  // 取出 completedTodos 裏面所有有 checked 這個 class 的內容，不要是陣列
-  for (let i = 0; i < completedTodos.length; i++) {
-    completedTodo = completedTodos[i];
-    console.log(completedTodo);
+//   // 取出 completedTodos 裏面所有有 checked 這個 class 的內容，不要是陣列
+//   for (let i = 0; i < completedTodos.length; i++) {
+//     completedTodo = completedTodos[i];
+//     console.log(completedTodo);
 
-    todo.innerText = completedTodo;
-  }
+//     todo.innerText = completedTodo;
+//   }
 
-  // for (let i = 0; i < todosArray.length; i++) {
-  //   let completedTodos;
-  //   completedTodos = todosArray[i];
-  //   console.log(completedTodos);
+//   // for (let i = 0; i < todosArray.length; i++) {
+//   //   let completedTodos;
+//   //   completedTodos = todosArray[i];
+//   //   console.log(completedTodos);
 
-  //   completedTodos.forEach(function (t) {
-  //     if (completedTodos.classList.contains("checked")) {
-  //       t.style.display = "flex";
-  //     } else {
-  //       t.style.display = "none";
-  //     }
-  //   });
-  // }
-});
+//   //   completedTodos.forEach(function (t) {
+//   //     if (completedTodos.classList.contains("checked")) {
+//   //       t.style.display = "flex";
+//   //     } else {
+//   //       t.style.display = "none";
+//   //     }
+//   //   });
+//   // }
+// });
