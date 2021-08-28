@@ -173,9 +173,8 @@ button:hover{
 
 }
 
-.fall{
-    transform: translatex(200px);
-    opacity: 0;
+#noTodo{
+    display: flex;
 }
 
 @media screen and (max-width:1260px) {
@@ -216,6 +215,13 @@ button:hover{
     }
 }
 
+/* 新增清單時的動畫 */
+.fall{
+    transform: translatex(200px);
+    opacity: 0;
+}
+
+/* 刪除清單時的動畫 */
 @keyframes scaleUp {
     from {
         left: -200px;
