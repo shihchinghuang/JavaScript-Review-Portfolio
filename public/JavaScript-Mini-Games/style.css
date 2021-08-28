@@ -1,6 +1,7 @@
  /* 配色參考 https://coolors.co/264653-2a9d8f-e9c46a-f4a261-e76f51 */
  
  *{
+     /* border: 1px black solid; */
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -78,11 +79,10 @@ body{
 h1{
     font-size: 3rem;
     font-family: 'Press Start 2P', cursive;
-    margin: 0 0 3rem 0;
+    margin: -5rem 0 3rem 0;
     letter-spacing: .5rem;
     line-height: 5rem;
     text-align: center;
-    margin-top: 4rem;
     color: #E76F51;
     /* text-shadow: 1px 1px white, -1px -1px #E76F51 */
     /* text-shadow: #2A9D8F 0.1em 0.1em 0.05em */
@@ -97,13 +97,12 @@ h1{
 }
 
 .section img{
-    width: 25%;
-    margin-top: 3rem;
+    width: 30%;
+    /* margin-top: 3rem; */
 }
 
 .catelogue{
     min-width: 60%;
-    height: 20rem;
 }
 
 .catelogue a{
@@ -230,22 +229,63 @@ h1{
     .burger-line-ani .line3{
         transform: rotate(45deg) translate(-5px,-6px);
     }
-
 }
- /* 計數器用 */
-        .count {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background-color: rgb(167, 131, 89);
-            text-align: center;
-            vertical-align: center;
-        }
 
-        /* icon 用 */
-        .fas {
-            font-size: 50px;
-            color: rgb(167, 131, 89);
-        }
+section{
+    padding: 20vh 0;
+    text-align: center;
+    height: 80vh;
+}
 
-        
+section h5{
+    font-size: 2rem;
+    color: #264653;
+    position: relative;
+    letter-spacing: 5px;
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 5rem;
+}
+h5 div{
+    z-index: -2;
+    position: absolute;
+    bottom: 0;
+    left: 15%;
+    width: 90%;
+    height: 40%;
+    border-radius: 2px;
+    background-color: #2A9D8F;
+}
+
+.fas {
+    font-size: 80px;
+    color: #2a9d8f;
+}
+
+#dice-section img{
+    width: 30%;
+}
+
+#outcome{
+    margin-top: -150px;
+}
+.btn{
+    width: 100px;
+    height: 100px;
+    color: #264653;
+    margin-top: -1rem;
+    font-weight: 900;
+    line-height: 100px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #ffc67d, #dca769);
+    box-shadow:  20px 20px 60px #cf9d63,
+                 -20px -20px 60px #ffd587;
+}
+
+.btn:hover{
+    border-radius: 50%;
+    background: #F4B975;
+    box-shadow: inset 20px 20px 60px #cf9d63,
+                inset -20px -20px 60px #ffd587;
+}

@@ -71,7 +71,7 @@ send.addEventListener("click", function () {
   // 使用者骰子結果
   userPoint.innerHTML = `你的點數：${point[userRandom - 1]}`;
   // 電腦骰子結果
-  computerPoint.innerHTML = `你的點數：${point[computerRandom - 1]}`;
+  computerPoint.innerHTML = `電腦的點數：${point[computerRandom - 1]}`;
 
   // 把使用者擲出的骰子從數字變為英文，後續fontawesome骰子的icon要用
   let userDiceOutcome = "";
@@ -142,11 +142,11 @@ send.addEventListener("click", function () {
   }"></i>`;
 
   if (userRandom > computerRandom) {
-    outcome.innerHTML = "勝負結果：你贏了";
+    outcome.innerHTML = "你贏了";
   } else if (userRandom == computerRandom) {
-    outcome.innerHTML = "勝負結果：平手，再骰一次";
+    outcome.innerHTML = "平手，再骰一次";
   } else {
-    outcome.innerHTML = "勝負結果：電腦贏了";
+    outcome.innerHTML = "電腦贏了";
   }
 });
 // ------------------擲骰子------------------

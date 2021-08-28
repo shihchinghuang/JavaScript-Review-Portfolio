@@ -32,6 +32,7 @@
 </head>
 
 <body>
+    <img src="./img/wavesOpacity.svg" alt="">
     <div class="nav">
         <p>JavaScript<br>Mini Games</p>
         <ul class="nav-a">
@@ -74,8 +75,9 @@
         </div>
     </header>
     <!-- 計數器開始 -->
-    <section id="count-section" class="container my-5">
-        <h5>｜計數器 - 1｜</h5>
+    <section id="count-section" class="container">
+        <h5>計數器<div></div>
+        </h5>
         <p>製作一個網頁上可以點按後累加數字的功能，每按一次加 1</p>
         <div class="count" id="count">
             <p>0</p>
@@ -83,28 +85,37 @@
     </section>
     <!-- 計數器結束 -->
 
-    <div class="border"></div>
 
     <!-- 擲骰子開始 -->
-    <section id="dice-section" class="container my-5">
-        <h5>｜擲骰子｜</h5>
-        <p>線上和電腦互擲骰子的遊戲應用程式，然後判斷會員點數和是否獲勝，會各自出現相對應的骰子 icon</p>
-        <button class="btn btn-primary" id="send">擲骰子</button>
-        <br>
-        <i class="fas" id="userDice"></i>
-        <!-- <i class="fas fa-dice-two"></i>-->
-        <p id="userPoint">你的點數</p>
-        <i class="fas" id="computerDice"></i>
-        <p id="computerPoint">電腦的點數</p>
-        <p id="outcome">勝負結果</p>
+    <section id="dice-section" class="container">
+        <h5>擲骰子<div></div>
+        </h5>
+        <div class="d-flex justify-content-between">
+            <img class="w-25" src="./img/computer.svg" alt="">
+
+            <div>
+                <p id="computerPoint">電腦的點數</p>
+                <i class="fas" id="computerDice"></i>
+            </div>
+            <div>
+                <p id="userPoint">你的點數</p>
+                <i class="fas" id="userDice"></i>
+            </div>
+
+
+            <img src="./img/clumsy.svg" alt="">
+        </div>
+        <h1 id="outcome">按我擲骰子<br>⬇⬇⬇</h1>
+        <div class="btn" id="send">！按我！</div>
+
     </section>
     <!-- 擲骰子結束 -->
 
-    <div class="border"></div>
 
     <!-- 猜拳開始 -->
-    <section id="fist-section" class="container my-5">
-        <h5>｜猜拳（剪刀 / 石頭 / 布）遊戲｜</h5>
+    <section id="fist-section" class="container">
+        <h5>猜拳<div></div>
+        </h5>
         <p>線上和電腦猜拳的遊戲應用程式，並判斷會員目前猜的拳與是否獲勝。</p>
         <button class="btn btn-dark pt-3 px-3" id="scissors">
             <i class="fas fa-hand-scissors"></i>
@@ -129,11 +140,10 @@
     </section>
     <!-- 猜拳結束 -->
 
-    <div class="border"></div>
-
     <!-- 抽卡開始 -->
-    <section id="card-section" class="container py-5">
-        <h5>｜線上抽卡（無限獎品）｜</h5>
+    <section id="card-section" class="container">
+        <h5>抽卡<div></div>
+        </h5>
         <p>5 星卡：機率 3%</p>
         <p>4 星卡：機率 17%</p>
         <p>3 星卡：機率 80%</p>
@@ -146,12 +156,11 @@
     </section>
     <!-- 抽卡結束 -->
 
-    <div class="border"></div>
-
     <!-- 終極密碼開始 -->
     <!-- 設計一個可以偷看答案的地方 -->
-    <section id="pwd-section" class="container py-5">
-        <h5>｜終極密碼｜</h5>
+    <section id="pwd-section" class="container">
+        <h5>終極密碼<div></div>
+        </h5>
         <p>電腦隨機產生亂數，使用者輸入值，電腦提示範圍，逐漸猜到該亂數。</p>
         <input type="text" id="input">
         <button id="btn">送出</button>
@@ -160,11 +169,10 @@
     </section>
     <!-- 終極密碼結束 -->
 
-    <div class="border"></div>
-
     <!-- 陣列反轉開始 -->
-    <section id="arrayReverse-section" class="container py-5">
-        <h5>｜陣列反轉｜</h5>
+    <section id="arrayReverse-section" class="container">
+        <h5>陣列反轉<div></div>
+        </h5>
         <p>將陣列順序第一項變成最後一項，最後一項變成第一項，以此類推</p>
         <p id="origin"></p>
         <button id="btnReverse">反轉</button>
@@ -172,11 +180,10 @@
     </section>
     <!-- 陣列反轉結束 -->
 
-    <div class="border"></div>
-
     <!-- 在陣列中找出最大值開始 -->
-    <section id="arrayBigNum-section" class="container py-5">
-        <h5>｜陣列中找最大值｜</h5>
+    <section id="arrayBigNum-section" class="container">
+        <h5>陣列中找最大值<div></div>
+        </h5>
         <p>在陣列中找出最大值</p>
         <p id="allArr"></p>
         <button id="btnFind">找最大值</button>
@@ -184,11 +191,10 @@
     </section>
     <!-- 在陣列中找出最大值開始 -->
 
-    <div class="border"></div>
-
     <!-- 累加數字開始 -->
-    <section id="addNum-section" class="container py-5">
-        <h5>｜累加數字｜</h5>
+    <section id="addNum-section" class="container">
+        <h5>累加數字<div></div>
+        </h5>
         <p>輸入一個數字，計算出 1+2+3+...+ 數字的總額</p>
         <input type="text" name="" id="addInput">
         <button id="btnAdd">加總</button>
