@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="shihchinghuang">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- tw icon https://www.twicon.page/index.html -->
+    <link rel="stylesheet" href="twicon/twicon.css">
+
+    <!-- google fonts https://fonts.google.com/ -->
+    <!-- font-family: 'Noto Sans TC', sans-serif; -->
+    <!-- ffont-family: 'Noto Serif TC', serif; -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100&family=Noto+Serif+TC:wght@200&display=swap"
+        rel="stylesheet">
+
+    <!-- font awesome https://fontawesome.com/-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+
+    <!-- css link -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+
+<body>
+    <!-- 日曆開始 -->
+    <div class="container py-5">
+        <h5>｜日曆｜</h5>
+        <p>用 for 迴圈製作一個表格，顯示目前這個月份的日曆表格。</p>
+        <p id="yearAndMoth"></p>
+        <table class="border border-dark">
+            <thead class="border border-dark" id="title">
+            </thead>
+
+            <tbody class="border border-dark" id="data"></tbody>
+        </table>
+    </div>
+    <!-- 日曆結束 -->
+
+    <!-- 選單控制開始 -->
+    <div class="container py-5">
+        <h5>｜選單控制｜</h5>
+        <p>透過 js 實現 css 的 hover 效果</p>
+        <ul>
+            <li class="menu-item"><a class="text-decoration-none text-white" href="">首頁</a></li>
+            <li class="menu-item"><a class="text-decoration-none text-white" href="">產品</a></li>
+            <li class="menu-item"><a class="text-decoration-none text-white" href="">關於我們</a></li>
+        </ul>
+    </div>
+    <!-- 選單控制結束 -->
+
+    <!-- csv 資料以表格呈現開始 -->
+    <div class="container py-5">
+        <h5>｜csv 資料以表格呈現｜</h5>
+        <p>將 csv 檔中的資料轉為 JavaScript 的陣列值，然後在網頁上以表格（table）的方式呈現出來，並計算平均值、查詢功能及排序功能。</p>
+        <p>學生成績表</p>
+        <table class="border border-dark" id="dataTable">
+
+        </table>
+    </div>
+
+    <!-- csv 資料以表格呈現結束 -->
+
+
+    <!-- js file -->
+    <script src="./app.js"></script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

@@ -137,3 +137,22 @@ sendDate.addEventListener("click", function () {
 //   selectedDate = date.value
 // })
 // ------------------生日下拉選單------------------
+
+// ------------------會員驗證------------------
+const name = document.querySelector("#name");
+const address = document.querySelector("#address");
+const account = document.querySelector("#account");
+const password = document.querySelector("#password");
+const passwordCheck = document.querySelector("#passwordCheck");
+const send = document.querySelector("#send");
+const message = document.querySelector("#message");
+
+send.addEventListener("click", function () {
+  if (!name.value) {
+    alert("沒填姓名");
+  }
+  if (password.value !== passwordCheck.value) {
+    alert("密碼錯誤");
+  }
+});
+// ------------------會員驗證------------------

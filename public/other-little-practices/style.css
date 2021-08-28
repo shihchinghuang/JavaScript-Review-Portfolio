@@ -1,0 +1,16 @@
+/* 選單控制用 */
+ul {
+    background-color: rgb(167, 131, 89);
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    /* padding: 10px; */
+}
