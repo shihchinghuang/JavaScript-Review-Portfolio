@@ -32,35 +32,37 @@
 </head>
 
 <body>
-    <div data-aos="fade-down" class="nav">
+    <div class="nav">
         <p>JavaScript<br>Mini Games</p>
-        <a href="#count-section">計數器</a>
-        <a href="#dice-section">擲骰子</a>
-        <a href="">猜拳</a>
-        <a href="">抽卡</a>
-        <a href="">終極密碼</a>
-        <a href="">陣列反轉</a>
-        <a href="">找最大值</a>
-        <a href="">累加數字</a>
+        <div class="nav-a">
+            <a href="#count-section">計數器</a>｜
+            <a href="#dice-section">擲骰子</a>｜
+            <a href="#fist-section">猜拳</a>｜
+            <a href="#card-section">抽卡</a>｜
+            <a href="#pwd-section">終極密碼</a>｜
+            <a href="#arrayReverse-section">陣列反轉</a>｜
+            <a href="#arrayBigNum-section">找最大值</a>｜
+            <a href="#addNum-section">累加數字</a>
+        </div>
     </div>
-    <div data-aos="fade-down" class="toTop">
+    <a href="#header" data-aos="fade-down" class="toTop">
         ⬆<br>to top
-    </div>
-    <h1 class="header" data-aos="fade-down">JavaScript<br>Mini Games</h1>
+    </a>
+    <h1 id="header" class="header" data-aos="fade-down">JavaScript<br>Mini Games</h1>
     <div class="section container">
         <img data-aos="fade-right" src="./img/swinging.svg" alt="">
         <div data-aos="fade-left" class="catelogue">
             <div class="top">
                 <a href="#count-section " class="game-card">計數器</a>
                 <a href="#dice-section" class="game-card">擲骰子</a>
-                <div class="game-card">猜拳</div>
-                <div class="game-card">抽卡</div>
+                <a href="#fist-section" class="game-card">猜拳</a>
+                <a href="#card-section" class="game-card">抽卡</a>
             </div>
             <div class="bottom">
-                <div class="game-card">終極密碼</div>
-                <div class="game-card">陣列反轉</div>
-                <div class="game-card">找最大值</div>
-                <div class="game-card">累加數字</div>
+                <a href="#pwd-section" class="game-card">終極密碼</a>
+                <a href="#arrayReverse-section" class="game-card">陣列反轉</a>
+                <a href="#arrayBigNum-section" class="game-card">找最大值</a>
+                <a href="#addNum-section" class="game-card">累加數字</a>
             </div>
         </div>
     </div>
@@ -93,31 +95,8 @@
 
     <div class="border"></div>
 
-    <!-- 生日下拉選擇開始 -->
-    <div class="container my-5">
-        <h5>｜生日下拉選擇並判斷是否滿 18 歲｜</h5>
-        <p>使用 for 迴圈製作一個生日的下拉選擇介面(select)，分別有三個下拉選擇介面，西元年、月、日。並檢查是否滿 18 歲。</p>
-        <select name="" id="year">
-            <!-- <option value="0" id="">--- 請選擇 ---</option> -->
-        </select>
-        <select name="" id="month">
-            <!-- <option value="0" id="">--- 請選擇 ---</option> -->
-        </select>
-
-        <!-- disabled是為了讓使用者先選月份，後續連動跳出28/30/31天 -->
-        <select name="" id="date" disabled>
-            <!-- <option value="0" id="">--- 請選擇 ---</option> -->
-        </select>
-        <!-- 檢查是否滿18歲 -->
-        <button class="ml-3 btn btn-primary" id="sendDate">送出</button>
-        <h6 id="message"></h6>
-    </div>
-    <!-- 生日下拉選擇結束 -->
-
-    <div class="border"></div>
-
     <!-- 猜拳開始 -->
-    <div class="container my-5">
+    <div id="fist-section" class="container my-5">
         <h5>｜猜拳（剪刀 / 石頭 / 布）遊戲｜</h5>
         <p>線上和電腦猜拳的遊戲應用程式，並判斷會員目前猜的拳與是否獲勝。</p>
         <button class="btn btn-dark pt-3 px-3" id="scissors">
@@ -146,7 +125,7 @@
     <div class="border"></div>
 
     <!-- 抽卡開始 -->
-    <div class="container py-5">
+    <div id="card-section" class="container py-5">
         <h5>｜線上抽卡（無限獎品）｜</h5>
         <p>5 星卡：機率 3%</p>
         <p>4 星卡：機率 17%</p>
@@ -163,7 +142,7 @@
     <div class="border"></div>
 
     <!-- 日曆開始 -->
-    <div class="container py-5">
+    <!-- <div class="container py-5">
         <h5>｜日曆｜</h5>
         <p>用 for 迴圈製作一個表格，顯示目前這個月份的日曆表格。</p>
         <p id="yearAndMoth"></p>
@@ -173,13 +152,13 @@
 
             <tbody class="border border-dark" id="data"></tbody>
         </table>
-    </div>
+    </div> -->
     <!-- 日曆結束 -->
 
     <div class="border"></div>
 
     <!-- 選單控制開始 -->
-    <div class="container py-5">
+    <!-- <div class="container py-5">
         <h5>｜選單控制｜</h5>
         <p>透過 js 實現 css 的 hover 效果</p>
         <ul>
@@ -187,21 +166,20 @@
             <li class="menu-item"><a class="text-decoration-none text-white" href="">產品</a></li>
             <li class="menu-item"><a class="text-decoration-none text-white" href="">關於我們</a></li>
         </ul>
-    </div>
-
+    </div> -->
     <!-- 選單控制結束 -->
 
     <div class="border"></div>
 
     <!-- csv 資料以表格呈現開始 -->
-    <div class="container py-5">
+    <!-- <div class="container py-5">
         <h5>｜csv 資料以表格呈現｜</h5>
         <p>將 csv 檔中的資料轉為 JavaScript 的陣列值，然後在網頁上以表格（table）的方式呈現出來，並計算平均值、查詢功能及排序功能。</p>
         <p>學生成績表</p>
         <table class="border border-dark" id="dataTable">
 
         </table>
-    </div>
+    </div> -->
 
     <!-- csv 資料以表格呈現結束 -->
 
@@ -209,7 +187,7 @@
 
     <!-- 終極密碼開始 -->
     <!-- 設計一個可以偷看答案的地方 -->
-    <div class="container py-5">
+    <div id="pwd-section" class="container py-5">
         <h5>｜終極密碼｜</h5>
         <p>電腦隨機產生亂數，使用者輸入值，電腦提示範圍，逐漸猜到該亂數。</p>
         <input type="text" id="input">
@@ -222,7 +200,7 @@
     <div class="border"></div>
 
     <!-- 陣列反轉開始 -->
-    <div class="container py-5">
+    <div id="arrayReverse-section" class="container py-5">
         <h5>｜陣列反轉｜</h5>
         <p>將陣列順序第一項變成最後一項，最後一項變成第一項，以此類推</p>
         <p id="origin"></p>
@@ -234,7 +212,7 @@
     <div class="border"></div>
 
     <!-- 在陣列中找出最大值開始 -->
-    <div class="container py-5">
+    <div id="arrayBigNum-section" class="container py-5">
         <h5>｜陣列中找最大值｜</h5>
         <p>在陣列中找出最大值</p>
         <p id="allArr"></p>
@@ -246,7 +224,7 @@
     <div class="border"></div>
 
     <!-- 累加數字開始 -->
-    <div class="container py-5">
+    <div id="addNum-section" class="container py-5">
         <h5>｜累加數字｜</h5>
         <p>輸入一個數字，計算出 1+2+3+...+ 數字的總額</p>
         <input type="text" name="" id="addInput">
@@ -255,17 +233,6 @@
     </div>
     <!-- 累加數字結束 -->
 
-
-
-
-    <!-- 會員驗證
-    會員姓名： <input type="text" id="name" maxlength="3">
-    會員住址：<input type="text" id="address">
-    會員帳號：<input type="text" id="account">
-    會員密碼：<input type="text" id="password">
-    密碼確認：<input type="text" id="passwordCheck">
-    <button type="reset" id="send">送出</button>
-    <h1 id="message"></h1> -->
     <!-- js file -->
     <script src="app.js"></script>
 

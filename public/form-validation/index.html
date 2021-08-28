@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="shihchinghuang">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- tw icon https://www.twicon.page/index.html -->
+    <link rel="stylesheet" href="twicon/twicon.css">
+
+    <!-- google fonts https://fonts.google.com/ -->
+    <!-- font-family: 'Noto Sans TC', sans-serif; -->
+    <!-- ffont-family: 'Noto Serif TC', serif; -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100&family=Noto+Serif+TC:wght@200&display=swap"
+        rel="stylesheet">
+
+    <!-- font awesome https://fontawesome.com/-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+</head>
+
+
+<body>
+    會員驗證
+    會員姓名： <input type="text" id="name" maxlength="3">
+    會員住址：<input type="text" id="address">
+    會員帳號：<input type="text" id="account">
+    會員密碼：<input type="text" id="password">
+    密碼確認：<input type="text" id="passwordCheck">
+    <button type="reset" id="send">送出</button>
+    <h1 id="message"></h1>
+    <!-- 生日下拉選擇開始 -->
+    <div class="container my-5">
+        <h5>｜生日下拉選擇並判斷是否滿 18 歲｜</h5>
+        <p>使用 for 迴圈製作一個生日的下拉選擇介面(select)，分別有三個下拉選擇介面，西元年、月、日。並檢查是否滿 18 歲。</p>
+        <select name="" id="year">
+            <!-- <option value="0" id="">--- 請選擇 ---</option> -->
+        </select>
+        <select name="" id="month">
+            <!-- <option value="0" id="">--- 請選擇 ---</option> -->
+        </select>
+
+        <!-- disabled是為了讓使用者先選月份，後續連動跳出28/30/31天 -->
+        <select name="" id="date" disabled>
+            <!-- <option value="0" id="">--- 請選擇 ---</option> -->
+        </select>
+        <!-- 檢查是否滿18歲 -->
+        <button class="ml-3 btn btn-primary" id="sendDate">送出</button>
+        <h6 id="message"></h6>
+    </div>
+    <!-- 生日下拉選擇結束 -->
+
+
+    <script src="./app.js"></script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
