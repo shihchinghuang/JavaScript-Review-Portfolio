@@ -175,6 +175,13 @@ button:hover{
 
 #noTodo{
     display: flex;
+    letter-spacing: 3px;
+    color: #FFE8D6;
+    background-color: #6B705C;
+    width: fit-content;
+    padding: 2%;
+    border-radius: 5px;
+    margin: auto;
 }
 
 @media screen and (max-width:1260px) {

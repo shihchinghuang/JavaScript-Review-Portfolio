@@ -17,6 +17,7 @@ window.onload = function () {
 
 // 頁面 load 進來就會取得上次存在 localstorage 的資料
 document.addEventListener("DOMContentLoaded", getLocalTodos);
+// 頁面 load 進來就檢查 localStorage 陣列是否為空，若為空就顯示空清單預設文字
 document.addEventListener("DOMContentLoaded", checkLocalTodos);
 
 add.addEventListener("click", addTodo);
@@ -95,6 +96,9 @@ function addTodo(e) {
 
     // 清空輸入框
     input.value = "";
+
+    // 每次增加就檢查 localStorage 陣列是否為空，若不為空就不顯示空清單預設文字
+    checkLocalTodos();
   }
 }
 
@@ -129,6 +133,9 @@ function deleteCheckTodo(e) {
     const todoItem = click.parentElement.parentElement;
     todoItem.classList.toggle("checked");
   }
+
+  // 每次刪除就檢查 localStorage 陣列是否為空，若不為空就不顯示空清單預設文字
+  checkLocalTodos();
 }
 
 //-----下拉選單篩選已完成 / 未完成的待辦事項-----
@@ -180,12 +187,12 @@ function saveLocalTodos(t) {
 
 //-----空清單預設文字-----
 function checkLocalTodos() {
-  if (JSON.parse(localStorage.getItem("todos")) === []) {
-    noTodo.style.display = "flex";
-    console.log("empty");
+  // 確認目前localstorage當中的todo list是不是空的，不能用===[ ] 。這個原因跟程式語言當中的primitive data type and reference data type有關。絕大多數的程式語言當中，若要確認array是不是空的，需要使用 array.length == 0 這個方式來確認。
+  if (JSON.parse(localStorage.getItem("todos")).length == 0) {
+    noTodo.style.display = "inline";
+    noTodo.style.animation = "scaleUp .5s forwards";
   } else {
     noTodo.style.display = "none";
-    console.log("not empty");
   }
 }
 
