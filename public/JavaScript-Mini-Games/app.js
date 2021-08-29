@@ -142,11 +142,11 @@ send.addEventListener("click", function () {
   }"></i>`;
 
   if (userRandom > computerRandom) {
-    outcome.innerHTML = "你贏了";
+    outcome.innerHTML = `你贏了<br>⬇⬇⬇`;
   } else if (userRandom == computerRandom) {
-    outcome.innerHTML = "平手，再骰一次";
+    outcome.innerHTML = `平手，再骰一次<br>⬇⬇⬇`;
   } else {
-    outcome.innerHTML = "電腦贏了";
+    outcome.innerHTML = `電腦贏了<br>⬇⬇⬇`;
   }
 });
 // ------------------擲骰子------------------

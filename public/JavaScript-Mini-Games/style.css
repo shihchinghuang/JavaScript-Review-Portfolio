@@ -232,7 +232,8 @@ h1{
 }
 
 section{
-    padding: 20vh 0;
+    padding: 15vh 0;
+    margin-bottom: 20vh;
     text-align: center;
     height: 80vh;
 }
@@ -279,8 +280,8 @@ h5 div{
     border: none;
     border-radius: 50%;
     background: linear-gradient(145deg, #ffc67d, #dca769);
-    box-shadow:  20px 20px 60px #cf9d63,
-                 -20px -20px 60px #ffd587;
+    box-shadow:  7px 7px 24px #7c5e3c,
+                 -7px -7px 24px #ffffae;
 }
 
 .btn:hover{
