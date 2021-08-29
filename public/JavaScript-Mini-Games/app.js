@@ -170,6 +170,10 @@ const play = (userNumber) => {
 
   // 使用者出拳
   // const userNumber = 1
+  const userHandOutcome = ["scissors", "rock", "paper"];
+  userHandIcon.innerHTML = `<i class="fas fa-hand-${
+    userHandOutcome[userNumber - 1]
+  }"></i>`;
   userHand.innerHTML = `你的出拳：${title[userNumber - 1]}`;
 
   // 電腦出拳 1-3隨機數，並對應到icon
@@ -182,7 +186,7 @@ const play = (userNumber) => {
 
   // 兩者相同時平手
   if (userNumber === computerNumber) {
-    outcomeHand.innerHTML = "勝負結果：平手，再猜一次";
+    outcomeHand.innerHTML = "平手，再猜一次<br>⬇⬇⬇";
   }
 
   // 用距離判斷輸贏
@@ -191,13 +195,13 @@ const play = (userNumber) => {
   // 使用者 - 電腦 = -2 時，使用者贏
   // 使用者 - 電腦 = 1 時，使用者贏
   if (range === -2 || range === 1) {
-    outcomeHand.innerHTML = "勝負結果：你贏了";
+    outcomeHand.innerHTML = "你贏了<br>⬇⬇⬇";
   }
 
   // 使用者 - 電腦 = -1 時，使用者輸
   // 使用者 - 電腦 = 2 時，使用者輸
   if (range === -1 || range === 2) {
-    outcomeHand.innerHTML = "勝負結果：電腦贏了";
+    outcomeHand.innerHTML = "電腦贏了<br>⬇⬇⬇";
   }
 
   // if (computerNumber === 1) {
@@ -271,20 +275,25 @@ function enterSend(j) {
 }
 
 function check() {
-  // console.log(typeof input.value);
+  console.log(`我輸入的 ${input.value}`);
+  console.log(`是數字嗎 ${isNaN(input.value)}`);
+  console.log(`是布林嗎 ${Boolean(input.value.trim() === "")}`);
+  console.log(`新的最大數字 ${n2}`);
+  console.log(`新的最小數字 ${n1}`);
   while (true) {
     if (
       // 表單驗證，如果輸入的值去掉空格非數字、大於最大值、小於最小值都會出現警告訊息
       isNaN(input.value) ||
-      input.value.trim() == "" ||
+      input.value.trim() === "" ||
       input.value > n2 ||
       input.value < n1
     ) {
-      hint.innerText = `格式錯誤，請輸入 ${n1}-${n2} 的數字`;
+      hint.innerText = `格式錯誤，請輸入 ${n1} - ${n2} 的數字`;
       break; // 記得要 break，否則會進入無窮迴圈
     } else if (input.value == ans) {
       // 要用兩個等於因為 input.value 是字串，只要值一樣就可以，三個等於是值和型別都一樣，或是用 parseInt() 先將 input.value 轉為數字
       hint.innerText = "恭喜答對了！";
+      location.reload();
       break;
     } else if (input.value > ans) {
       // 如果使用者輸入的數字大於答案，那提示文字的最大值就要變成使用者輸入的數字
@@ -298,6 +307,7 @@ function check() {
       break;
     }
   }
+
   // 清空輸入的值
   input.value = "";
 }

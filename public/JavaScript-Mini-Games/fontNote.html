@@ -30,76 +30,31 @@
     <!-- aos -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-        h1 {
-            margin: 50px;
+        body {
+            font-family: Arial, Helvetica, sans-serif;
         }
 
-        .a {
-            font-family: 'Aldrich', sans-serif;
+        .flip-card-back {
+            background-color: antiquewhite;
+            width: 200px;
+            height: 200px;
         }
 
-        .b {
-            font-family: 'Azeret Mono', monospace;
+        .flip-card-back {
+            font-size: 20px;
         }
 
-        .c {
-            font-family: 'Monofett', cursive;
-        }
-
-        .d {
-            font-family: 'Play', sans-serif;
-        }
-
-        .e {
-            font-family: 'Press Start 2P', cursive;
-        }
-
-        .burger {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: stretch;
-        }
-
-        .burger div {
-            width: 1.8rem;
-            height: .2rem;
-            border-radius: 2px;
-            background-color: black;
-            margin: 2px;
+        .flip-card-back h1 {
+            line-height: 20px;
         }
     </style>
 </head>
 
-
 <body>
-
-    <h1 data-aos="fade-down" class="a">Aldrich</h1>
-    <h1 class="b">Azeret</h1>
-    <h1 class="c">Monofett</h1>
-    <h1 class="d">Play</h1>
-    <h1 class="e">Press</h1>
-    <div class="burger">
-        <div class="line1"></div>
-        <div class="line2"></div>
-        <div class="line3"></div>
+    <div class="flip-card-back">
+        <h1 id="answer">John Doe</h1>
     </div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
-    <!-- aos -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
+
 </body>
 
 </html>
