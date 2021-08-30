@@ -276,8 +276,8 @@ function enterSend(j) {
 
 function check() {
   console.log(`我輸入的 ${input.value}`);
-  console.log(`是數字嗎 ${isNaN(input.value)}`);
-  console.log(`是布林嗎 ${Boolean(input.value.trim() === "")}`);
+  console.log(`是非數字嗎 ${isNaN(input.value)}`);
+  console.log(`有填資料嗎 ${Boolean(input.value.trim() === "")}`);
   console.log(`新的最大數字 ${n2}`);
   console.log(`新的最小數字 ${n1}`);
   while (true) {
@@ -298,16 +298,14 @@ function check() {
     } else if (input.value > ans) {
       // 如果使用者輸入的數字大於答案，那提示文字的最大值就要變成使用者輸入的數字
       n2 = input.value;
-      hint.innerText = `請輸入 ${n1} - ${n2}  的數字`;
-      break;
+      // hint.innerText = `請輸入 ${n1}
     } else if (input.value < ans) {
       // 如果使用者輸入的數字小於答案，那提示文字的最小值就要變成使用者輸入的數字
       n1 = input.value;
-      hint.innerText = `請輸入 ${n1} - ${n2}  的數字`;
-      break;
     }
+    hint.innerText = `請輸入 ${n1} - ${n2}  的數字`;
+    break;
   }
-
   // 清空輸入的值
   input.value = "";
 }
