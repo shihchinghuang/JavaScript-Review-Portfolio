@@ -317,21 +317,23 @@ const origin = document.querySelector("#origin");
 const reverse = document.querySelector("#reverse");
 const btnReverse = document.querySelector("#btnReverse");
 const friends = ["Harry", "Ron", "Snap", "Abby", "Cindy"];
-const reversed_friends = [];
+const reversedFriends = [];
 
 origin.innerText = friends;
 
 for (i = 0; i < friends.length; i++) {
-  reversed_friends.unshift(friends[i]);
+  reversedFriends.unshift(friends[i]);
 }
 
 btnReverse.addEventListener("click", function () {
-  reverse.innerText = reversed_friends;
+  reverse.innerText = reversedFriends;
 });
 
 // ------------------陣列反轉------------------
 
 // ------------------在陣列中找出最大值------------------
+// 也可以用 Math.max(22, 33, 44, 55)
+// https://www.udemy.com/course/html5-css3-z/learn/lecture/23878714#questions
 const allArr = document.querySelector("#allArr");
 const btnFind = document.querySelector("#btnFind");
 const bigNum = document.querySelector("#bigNum");
@@ -368,7 +370,14 @@ const btnAdd = document.querySelector("#btnAdd");
 const finalNum = document.querySelector("#finalNum");
 
 btnAdd.addEventListener("click", addUp);
+addInput.addEventListener("keyup", addeEnterSend);
 
+// 按 enter 送出
+function addeEnterSend(j) {
+  if (j.keyCode === 13) {
+    btnAdd.click();
+  }
+}
 function addUpTo(n) {
   let result = 0;
   for (let i = 1; n + 1 > i > 0; i++) {
@@ -379,7 +388,16 @@ function addUpTo(n) {
 // console.log(addUpTo(4));
 
 function addUp() {
-  finalNum.innerText = addUpTo(parseInt(addInput.value));
+  if (
+    // 表單驗證，如果輸入的值去掉空格非數字、大於最大值、小於最小值都會出現警告訊息
+    isNaN(addInput.value) ||
+    addInput.value.trim() === ""
+  ) {
+    finalNum.innerText = "格式錯誤，請輸入數字";
+    console.log("d");
+  } else {
+    finalNum.innerText = `ans：${addUpTo(parseInt(addInput.value))}`;
+  }
 }
 
 // ------------------累加數字------------------

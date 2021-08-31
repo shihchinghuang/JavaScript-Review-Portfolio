@@ -51,9 +51,38 @@
 </head>
 
 <body>
-    <div class="flip-card-back">
-        <h1 id="answer">John Doe</h1>
+    <div class="all">
+        <input type="text" class="inputArrayWord">
+
+        <input type="text" class="inputArrayWord">
+
     </div>
+    <i class="fas fa-plus"></i>
+
+    <button id="btnCheckArray">確認</button>
+    <p class="show"></p>
+
+    <script>
+        const all = document.querySelector('.all')
+        const inputArrayWords = document.querySelectorAll('.inputArrayWord')
+        const btnCheckArray = document.querySelector('#btnCheckArray')
+        const btnPlus = document.querySelector(".fas")
+        const show = document.querySelector(".show")
+
+        btnPlus.addEventListener('click', function () {
+            const item = document.createElement('input')
+            item.setAttribute('type', 'text');
+            item.classList.add('inputArrayWord')
+            all.appendChild(item)
+            console.log(all);
+        })
+
+        btnCheckArray.addEventListener('click', function () {
+            for (let i = 0; i < inputArrayWords.length; i++) {
+                console.log(inputArrayWords[i].value);
+            }
+        })
+    </script>
 
 </body>
 
