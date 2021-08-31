@@ -78,9 +78,9 @@
     <section id="count-section" class="container">
         <h5>計數器<div></div>
         </h5>
-        <p>製作一個網頁上可以點按後累加數字的功能，每按一次加 1</p>
+        <h1>按我加一<br>⬇⬇⬇</h1>
         <div class="count" id="count">
-            <p>0</p>
+            <h1 class="btn">0</h1>
         </div>
     </section>
     <!-- 計數器結束 -->
@@ -144,15 +144,14 @@
     <section id="card-section" class="container">
         <h5>抽卡<div></div>
         </h5>
-        <p>5 星卡：機率 3%</p>
-        <p>4 星卡：機率 17%</p>
-        <p>3 星卡：機率 80%</p>
+        <p>5 星卡：機率 33%</p>
+        <p>4 星卡：機率 33%</p>
+        <p>3 星卡：機率 34%</p>
+        <button class="btn m-3" id="draw">請抽獎</button>
+        <button class="btn m-3" id="refresh">重新整理</button><br>
+        <i class="fas fa-gifts"></i>
+        <h1 class="mt-5" id="outcomeCard"> </h1>
 
-        <button class="btn btn-dark pt-3 px-3" id="draw">
-            <i class="fas fa-gifts"></i>
-            <p class="mt-3">請抽獎</p>
-            <p id="outcomeCard"></p>
-        </button>
     </section>
     <!-- 抽卡結束 -->
 
@@ -187,19 +186,19 @@
     <section id="arrayReverse-section" class="container">
         <h5>陣列反轉<div></div>
         </h5>
-        <p>將陣列順序第一項變成最後一項，最後一項變成第一項，以此類推，點選加號可以填更多內容</p>
+        <p>將陣列順序第一項變成最後一項，最後一項變成第一項</p>
 
-        <input type="text" class="inputArrayWord">
+        <!-- <input type="text" class="inputArrayWord">
 
         <input type="text" class="inputArrayWord">
 
         <i class="fas fa-plus"></i>
 
-        <button id="btnCheckArray">確認</button>
+        <button id="btnCheckArray">確認</button> -->
 
         <p id="origin"></p>
 
-        <button id="btnReverse">反轉</button>
+        <button class="btn my-5" id="btnReverse">反轉</button>
 
         <p id="reverse"> </p>
     </section>
@@ -211,13 +210,13 @@
         </h5>
         <p>在陣列中找出最大值</p>
         <p id="allArr"></p>
-        <button id="btnFind">找最大值</button>
-        <p id="bigNum"> </p>
+        <button class="btn my-5" id="btnFind">找最大值</button>
+        <p id="bigNum"></p>
     </section>
     <!-- 在陣列中找出最大值開始 -->
 
     <!-- 累加數字開始 -->
-    <section id="addNum-section" class="container">
+    <section id="addNum-section" class="container mb-5">
         <h5>累加數字<div></div>
         </h5>
         <p>輸入一個數字，計算出 1+2+3+...+n 數字的總額</p>

@@ -44,7 +44,7 @@ count.addEventListener("click", function () {
   //count.textContent += 1
 
   // 把字串轉為數字：加上Number()
-  count.textContent = Number(count.textContent) + 1;
+  count.innerHTML = `<h1 class="btn"> ${Number(count.textContent) + 1} </h1>`;
 
   // 也可以用+把字串轉為數字 例如：
   // count.innerHTML = +count.innerHTML + 1
@@ -229,22 +229,29 @@ paper.addEventListener("click", function () {
 // ------------------抽卡------------------
 const draw = document.querySelector("#draw");
 const outcomeCard = document.querySelector("#outcomeCard");
+const refresh = document.querySelector("#refresh");
 
 const randomCard = Math.floor(Math.random() * 100) + 1;
 
 draw.addEventListener("click", function () {
   console.log(randomCard);
+  console.log(typeof randomCard);
+  console.log(randomCard < 33);
+  console.log(34 <= randomCard < 66);
+  console.log(67 <= randomCard <= 100);
 
   // 1-3 五星卡；4-20 四星卡；21-100 三星卡
-  if (randomCard < 4) {
+  if (randomCard < 33) {
     outcomeCard.innerHTML = "抽中五星卡";
-  }
-  if (4 <= randomCard < 21) {
+  } else if (34 <= randomCard < 66) {
     outcomeCard.innerHTML = "抽中四星卡";
-  }
-  if (21 <= randomCard <= 100) {
+  } else if (67 <= randomCard <= 100) {
     outcomeCard.innerHTML = "抽中三星卡";
   }
+});
+
+refresh.addEventListener("click", function () {
+  location.reload();
 });
 // ------------------抽卡------------------
 
@@ -338,16 +345,16 @@ const allArr = document.querySelector("#allArr");
 const btnFind = document.querySelector("#btnFind");
 const bigNum = document.querySelector("#bigNum");
 
-const arr = [22, 33, 44, 55];
+const arr = [22, 33, 44, 55, 66, 77];
 
 allArr.innerText = arr;
 
-btnFind.addEventListener("click", findBig);
+btnFind.addEventListener("click", showBig);
 
 function findBig(arr) {
   // 如果陣列裡沒有值，就出現undefined
   if (arr.length == 0) {
-    BigNum.innerText = "undefined";
+    bigNum.innerText = "undefined";
   }
   // 先設定一個假定的最大數
   let big = -1;
@@ -360,7 +367,9 @@ function findBig(arr) {
   }
   return big;
 }
-bigNum.innerText = findBig(arr);
+function showBig() {
+  bigNum.innerText = findBig(arr);
+}
 
 // ------------------在陣列中找出最大值------------------
 

@@ -104,6 +104,11 @@ h1{
     align-items: center;
 }
 
+section{
+    padding: 15vh 0 0 0;
+    text-align: center;
+    min-height: 80vh;
+}
 .section img{
     width: 30%;
     /* margin-top: 3rem; */
@@ -240,12 +245,7 @@ h1{
     }
 }
 
-section{
-    padding: 15vh 0;
-    margin-bottom: 20vh;
-    text-align: center;
-    min-height: 70vh;
-}
+
 
 section h5{
     font-size: 2rem;
@@ -284,6 +284,18 @@ section img{
 section h1{
     margin-top: -150px;
 }
+#count-section h1{
+    margin-top: 70px;
+}
+
+#count h1{
+    cursor: pointer;
+}
+
+#count .btn{
+    margin-top: 10px;
+}
+
 .btn{
     width: 100px;
     height: 100px;
@@ -304,6 +316,10 @@ section h1{
     background: #F4B975;
     box-shadow: inset 20px 20px 60px #cf9d63,
                 inset -20px -20px 60px #ffd587;
+}
+
+#count .btn{
+    font-size: 30px;
 }
 
 
