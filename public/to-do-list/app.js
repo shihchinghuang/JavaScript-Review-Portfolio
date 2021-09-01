@@ -1,5 +1,4 @@
 // 研究編輯，或把編輯 icon 拿掉
-// 沒資料的時候顯示文字
 // 打勾的要傳到localstorage
 
 const add = document.querySelector("#add");
@@ -73,10 +72,10 @@ function addTodo(e) {
     newTodo.appendChild(checkIcon);
 
     // 製造編輯
-    const editIcon = document.createElement("i");
-    editIcon.innerHTML = "";
-    editIcon.classList.add("edit-icon", "far", "fa-edit");
-    newTodo.appendChild(editIcon);
+    // const editIcon = document.createElement("i");
+    // editIcon.innerHTML = "";
+    // editIcon.classList.add("edit-icon", "far", "fa-edit");
+    // newTodo.appendChild(editIcon);
 
     // 製造刪除
     const trashIcon = document.createElement("i");
@@ -226,10 +225,10 @@ function getLocalTodos() {
     newTodo.appendChild(checkIcon);
 
     // 製造編輯
-    const editIcon = document.createElement("i");
-    editIcon.innerHTML = "";
-    editIcon.classList.add("edit-icon", "far", "fa-edit");
-    newTodo.appendChild(editIcon);
+    // const editIcon = document.createElement("i");
+    // editIcon.innerHTML = "";
+    // editIcon.classList.add("edit-icon", "far", "fa-edit");
+    // newTodo.appendChild(editIcon);
 
     // 製造刪除
     const trashIcon = document.createElement("i");
