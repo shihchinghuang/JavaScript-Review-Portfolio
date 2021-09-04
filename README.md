@@ -1,6 +1,12 @@
 # JavaScript-Review-Portfolio
 
-* [JavaScript-Mini-Games (Responsive)](https://shihchinghuang.github.io/JavaScript-Review-Portfolio/public/JavaScript-Mini-Games/index.html) <br>
+* [fetch-filter-user-list](https://shihchinghuang.github.io/JavaScript-Review-Portfolio/public/fetch-filter-user-list/index.html) <br>
+▸ 透過 fetch API 串接資料 <br>
+▸ 透過 filter 篩選資料 <br>
+▸ 運用 SCSS 預處理器 <br>
+
+
+* [JavaScript-Mini-Games](https://shihchinghuang.github.io/JavaScript-Review-Portfolio/public/JavaScript-Mini-Games/index.html) <br>
 ▸ 計數器 <br>
 ▸ 擲骰子 <br>
 ▸ 猜拳 <br>
