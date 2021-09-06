@@ -52,3 +52,62 @@ const divnodelist = div.childNodes;
 console.log(divnodelist);
 // 會印出 NodeList(3) [p, a, p]，但中間不能有斷行或空格
 // ------------------childnode------------------
+
+// ------------------promise------------------
+// 關鍵字： new Promise / resolve / reject / new Error("")
+function getData(name) {
+  if (name == "Will") {
+    return new Promise((resolve, reject) => {
+      resolve({
+        name: "Will",
+        age: Math.floor(Math.random() * 30),
+      });
+    });
+  } else {
+    return new Promise((resolve, reject) => {
+      reject(new Error("wrong"));
+    });
+  }
+}
+
+function getMovie(age) {
+  if (age < 12) {
+    return new Promise((resolve, reject) => {
+      resolve({
+        text: "cartoon",
+      });
+    });
+  } else if (age < 18) {
+    return new Promise((resolve, reject) => {
+      resolve({
+        text: "teen",
+      });
+    });
+  } else {
+    return new Promise((resolve, reject) => {
+      reject(new Error("wrong"));
+    });
+  }
+}
+
+getData("Will")
+  .then((obj) => {
+    console.log(obj.age);
+    return getMovie(obj.age);
+  })
+  .then((msg) => {
+    console.log(msg.text);
+  })
+  .catch((e) => {
+    console.log(e);
+  });
+
+// ------------------promise------------------
+
+// ------------------async / await------------------
+async function showMovie() {
+  const obj = await getData("Will");
+  const movie = await getMovie(obj.age);
+  console.log(movie.text);
+}
+// ------------------async / await------------------
