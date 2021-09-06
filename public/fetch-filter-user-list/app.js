@@ -7,11 +7,11 @@ const listItem = [];
 async function getData() {
   // res = response the fetched data
   const res = await fetch("https://randomuser.me/api/?results=50");
-
+  //   console.log(await res.json());
   // await res.json(): get all data as object
   // {results}: all data results
   const { results } = await res.json();
-  console.log(results);
+  //   console.log(results);
   //  clear reults
   result.innerHTML = "";
 
