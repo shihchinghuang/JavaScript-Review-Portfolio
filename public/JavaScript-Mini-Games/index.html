@@ -38,14 +38,14 @@
     <div class="nav">
         <p>JavaScript<br>Mini Games</p>
         <ul class="nav-a">
-            <li><a href="#count-section">計數器</a></li>
-            <li><a href="#dice-section">擲骰子</a></li>
-            <li><a href="#fist-section">猜拳</a></li>
-            <li><a href="#card-section">抽卡</a></li>
-            <li><a href="#pwd-section">終極密碼</a></li>
-            <li><a href="#arrayReverse-section">陣列反轉</a></li>
-            <li><a href="#arrayBigNum-section">找最大值</a></li>
-            <li><a href="#addNum-section">累加數字</a></li>
+            <li><a href="#count-section">Counter</a></li>
+            <li><a href="#dice-section">Dice</a></li>
+            <li><a href="#fist-section">PRS</a></li>
+            <li><a href="#card-section">Cards</a></li>
+            <li><a href="#pwd-section">GuessNum</a></li>
+            <li><a href="#arrayReverse-section">Array</a></li>
+            <li><a href="#arrayBigNum-section">Maximum</a></li>
+            <li><a href="#addNum-section">AddNum</a></li>
         </ul>
         <div class="burger">
             <div class="line1"></div>
@@ -62,111 +62,111 @@
             <img data-aos="fade-right" src="./img/swinging.svg" alt="">
             <div data-aos="fade-left" class="catelogue">
                 <div class="top">
-                    <a href="#count-section " class="game-card">計數器</a>
-                    <a href="#dice-section" class="game-card">擲骰子</a>
-                    <a href="#fist-section" class="game-card">猜拳</a>
-                    <a href="#card-section" class="game-card">抽卡</a>
+                    <a href="#count-section " class="game-card">Counter</a>
+                    <a href="#dice-section" class="game-card">Dice</a>
+                    <a href="#fist-section" class="game-card">PRS</a>
+                    <a href="#card-section" class="game-card">Cards</a>
                 </div>
                 <div class="bottom">
-                    <a href="#pwd-section" class="game-card">終極密碼</a>
-                    <a href="#arrayReverse-section" class="game-card">陣列反轉</a>
-                    <a href="#arrayBigNum-section" class="game-card">找最大值</a>
-                    <a href="#addNum-section" class="game-card">累加數字</a>
+                    <a href="#pwd-section" class="game-card">GuessNum</a>
+                    <a href="#arrayReverse-section" class="game-card">Array</a>
+                    <a href="#arrayBigNum-section" class="game-card">Maximum</a>
+                    <a href="#addNum-section" class="game-card">AddNum</a>
                 </div>
             </div>
         </div>
     </header>
-    <!-- 計數器開始 -->
+    <!-- Counter開始 -->
     <section id="count-section" class="container">
-        <h5>計數器<div></div>
+        <h5>Counter<div></div>
         </h5>
-        <h1>按我加一<br>⬇⬇⬇</h1>
+        <h1>Click to add one<br>⬇⬇⬇</h1>
         <div class="count" id="count">
             <h1 class="btn">0</h1>
         </div>
     </section>
-    <!-- 計數器結束 -->
+    <!-- Counter結束 -->
 
 
-    <!-- 擲骰子開始 -->
+    <!-- Dice開始 -->
     <section id="dice-section" class="container">
-        <h5>擲骰子<div></div>
+        <h5>Dice<div></div>
         </h5>
         <div class="d-flex justify-content-around">
             <img class="w-25" src="./img/computer.svg" alt="">
             <div>
-                <p id="computerPoint">電腦的點數</p>
+                <p id="computerPoint">Computer</p>
                 <i class="fas" id="computerDice"></i>
             </div>
             <div>
-                <p id="userPoint">你的點數</p>
+                <p id="userPoint">Yours</p>
                 <i class="fas" id="userDice"></i>
             </div>
             <img src="./img/clumsy.svg" alt="">
         </div>
-        <h1 id="outcome">按我擲骰子<br>⬇⬇⬇</h1>
-        <div class="btn" id="send">！按我！</div>
+        <h1 id="outcome">Click<br>⬇⬇⬇</h1>
+        <div class="btn" id="send">HERE</div>
 
     </section>
-    <!-- 擲骰子結束 -->
+    <!-- Dice結束 -->
 
 
-    <!-- 猜拳開始 -->
+    <!-- PRS開始 -->
     <section id="fist-section" class="container">
-        <h5>猜拳<div></div>
+        <h5>Paper Scissor Stone<div></div>
         </h5>
         <div class="d-flex justify-content-around">
             <img class="fist-user-img" src="./img/clumsy.svg" alt="">
             <div>
-                <p id="userHand">你的出拳</p>
+                <p id="userHand">Yours</p>
                 <i class="fas" id="userHandIcon"></i>
             </div>
 
             <div>
-                <p id="computerHand">電腦的出拳</p>
+                <p id="computerHand">Computer</p>
                 <i class="fas" id="computerHandIcon"></i>
             </div>
             <img class="w-25" src="./img/computer.svg" alt="">
         </div>
-        <h1 id="outcomeHand">按我猜拳<br>⬇⬇⬇</h1>
+        <h1 id="outcomeHand">Click<br>⬇⬇⬇</h1>
 
         <button class="btn mr-5" id="scissors">
-            <p>剪刀</p>
+            <p>Scissors</p>
         </button>
         <button class="btn mr-5" id="rock">
-            <p>石頭</p>
+            <p>Rock</p>
         </button>
         <button class="btn" id="paper">
-            <p>布</p>
+            <p>Paper</p>
         </button>
     </section>
-    <!-- 猜拳結束 -->
+    <!-- PRS結束 -->
 
-    <!-- 抽卡開始 -->
+    <!-- Cards開始 -->
     <section id="card-section" class="container">
-        <h5>抽卡<div></div>
+        <h5>Cards<div></div>
         </h5>
-        <p>5 星卡：機率 33%</p>
-        <p>4 星卡：機率 33%</p>
-        <p>3 星卡：機率 34%</p>
-        <button class="btn m-3" id="draw">請抽獎</button>
-        <button class="btn m-3" id="refresh">重新整理</button><br>
+        <p>5 Star: 33%</p>
+        <p>4 Star: 33%</p>
+        <p>3 Star: 34%</p>
+        <button class="btn m-3" id="draw">Click</button>
+        <button class="btn m-3" id="refresh">Refresh</button><br>
         <i class="fas fa-gifts"></i>
         <h1 class="mt-5" id="outcomeCard"> </h1>
 
     </section>
-    <!-- 抽卡結束 -->
+    <!-- Cards結束 -->
 
-    <!-- 終極密碼開始 -->
+    <!-- GuessNum開始 -->
     <!-- 設計一個可以偷看答案的地方 -->
     <section id="pwd-section" class="container">
-        <h5>終極密碼<div></div>
+        <h5>GuessNum<div></div>
         </h5>
         <div class="d-flex justify-content-center">
             <div class="flip-card">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
-                        <p>滑鼠滑一下偷看答案<br>⬇⬇⬇</p>
+                        <p>Take a peek<br>⬇⬇⬇</p>
                         <img class="w-100" src="./img/peek.svg" alt="">
                     </div>
                     <div class="flip-card-back">
@@ -176,19 +176,19 @@
             </div>
             <div class="pwd-input">
                 <input type="text" id="input">
-                <button class="btn" id="btn">送出</button>
-                <p id="hint">請輸入 1 - 100 的數字</p>
+                <button class="btn" id="btn">Click</button>
+                <p id="hint">Please enter 1 to 100</p>
             </div>
         </div>
 
     </section>
-    <!-- 終極密碼結束 -->
+    <!-- GuessNum結束 -->
 
-    <!-- 陣列反轉開始 -->
+    <!-- Array開始 -->
     <section id="arrayReverse-section" class="container">
-        <h5>陣列反轉<div></div>
+        <h5>Array<div></div>
         </h5>
-        <p>將陣列順序第一項變成最後一項，最後一項變成第一項</p>
+        <p>Reverse the array</p>
 
         <!-- <input type="text" class="inputArrayWord">
 
@@ -200,33 +200,33 @@
 
         <p id="origin"></p>
 
-        <button class="btn my-5" id="btnReverse">反轉</button>
+        <button class="btn my-5" id="btnReverse">Click</button>
 
         <p id="reverse"> </p>
     </section>
-    <!-- 陣列反轉結束 -->
+    <!-- Array結束 -->
 
     <!-- 在陣列中找出最大值開始 -->
     <section id="arrayBigNum-section" class="container">
-        <h5>陣列中找最大值<div></div>
+        <h5>Find a maximum in an array<div></div>
         </h5>
-        <p>在陣列中找出最大值</p>
+        <p>Find a maximum in an array</p>
         <p id="allArr"></p>
-        <button class="btn my-5" id="btnFind">找最大值</button>
+        <button class="btn my-5" id="btnFind">Click</button>
         <p id="bigNum"></p>
     </section>
     <!-- 在陣列中找出最大值開始 -->
 
-    <!-- 累加數字開始 -->
+    <!-- AddNum開始 -->
     <section id="addNum-section" class="container mb-5">
-        <h5>累加數字<div></div>
+        <h5>AddNum<div></div>
         </h5>
-        <p>輸入一個數字，計算出 1+2+3+...+n 數字的總額</p>
+        <p>Adding up 1+2+3+...+n</p>
         <input type="text" name="" id="addInput">
-        <button class="btn" id="btnAdd">加總</button>
+        <button class="btn" id="btnAdd">Click</button>
         <h1 id="finalNum"> </h1>
     </section>
-    <!-- 累加數字結束 -->
+    <!-- AddNum結束 -->
 
 
     <!-- js file -->

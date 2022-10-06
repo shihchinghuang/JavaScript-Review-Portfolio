@@ -61,7 +61,14 @@ const outcome = document.querySelector("#outcome");
 
 // 按下send會觸發的動作
 send.addEventListener("click", function () {
-  const point = ["1 點", "2 點", "3 點", "4 點", "5 點", "6 點"];
+  const point = [
+    "1 point",
+    "2 points",
+    "3 points",
+    "4 points",
+    "5 points",
+    "6 points",
+  ];
   // 使用者擲出的骰子數隨機1-6
   const userRandom = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
 
@@ -69,9 +76,9 @@ send.addEventListener("click", function () {
   const computerRandom = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
 
   // 使用者骰子結果
-  userPoint.innerHTML = `你的點數：${point[userRandom - 1]}`;
+  userPoint.innerHTML = `You: ${point[userRandom - 1]}`;
   // 電腦骰子結果
-  computerPoint.innerHTML = `電腦的點數：${point[computerRandom - 1]}`;
+  computerPoint.innerHTML = `Computer: ${point[computerRandom - 1]}`;
 
   // 把使用者擲出的骰子從數字變為英文，後續fontawesome骰子的icon要用
   let userDiceOutcome = "";
@@ -142,11 +149,11 @@ send.addEventListener("click", function () {
   }"></i>`;
 
   if (userRandom > computerRandom) {
-    outcome.innerHTML = `你贏了<br>⬇⬇⬇`;
+    outcome.innerHTML = `You won!<br>⬇⬇⬇`;
   } else if (userRandom == computerRandom) {
-    outcome.innerHTML = `平手，再骰一次<br>⬇⬇⬇`;
+    outcome.innerHTML = `A tie<br>⬇⬇⬇`;
   } else {
-    outcome.innerHTML = `電腦贏了<br>⬇⬇⬇`;
+    outcome.innerHTML = `Computer won<br>⬇⬇⬇`;
   }
 });
 // ------------------擲骰子------------------
@@ -166,7 +173,7 @@ const outcomeHand = document.querySelector("#outcomeHand");
 // 統一寫一個判斷勝負的函式
 const play = (userNumber) => {
   // 先宣告中文對應
-  const title = ["剪刀", "石頭", "布"];
+  const title = ["Scissors", "Rock", "Paper"];
 
   // 使用者出拳
   // const userNumber = 1
@@ -174,7 +181,7 @@ const play = (userNumber) => {
   userHandIcon.innerHTML = `<i class="fas fa-hand-${
     userHandOutcome[userNumber - 1]
   }"></i>`;
-  userHand.innerHTML = `你的出拳：${title[userNumber - 1]}`;
+  userHand.innerHTML = `You: ${title[userNumber - 1]}`;
 
   // 電腦出拳 1-3隨機數，並對應到icon
   const computerNumber = Math.floor(Math.random() * 3) + 1;
@@ -182,11 +189,11 @@ const play = (userNumber) => {
   computerHandIcon.innerHTML = `<i class="fas fa-hand-${
     computerHandOutcome[computerNumber - 1]
   }"></i>`;
-  computerHand.innerHTML = `電腦的出拳：${title[computerNumber - 1]}`;
+  computerHand.innerHTML = `Computer: ${title[computerNumber - 1]}`;
 
   // 兩者相同時平手
   if (userNumber === computerNumber) {
-    outcomeHand.innerHTML = "平手，再猜一次<br>⬇⬇⬇";
+    outcomeHand.innerHTML = "A tie<br>⬇⬇⬇";
   }
 
   // 用距離判斷輸贏
@@ -195,13 +202,13 @@ const play = (userNumber) => {
   // 使用者 - 電腦 = -2 時，使用者贏
   // 使用者 - 電腦 = 1 時，使用者贏
   if (range === -2 || range === 1) {
-    outcomeHand.innerHTML = "你贏了<br>⬇⬇⬇";
+    outcomeHand.innerHTML = "You won!<br>⬇⬇⬇";
   }
 
   // 使用者 - 電腦 = -1 時，使用者輸
   // 使用者 - 電腦 = 2 時，使用者輸
   if (range === -1 || range === 2) {
-    outcomeHand.innerHTML = "電腦贏了<br>⬇⬇⬇";
+    outcomeHand.innerHTML = "Computer won<br>⬇⬇⬇";
   }
 
   // if (computerNumber === 1) {
@@ -242,11 +249,11 @@ draw.addEventListener("click", function () {
 
   // 1-3 五星卡；4-20 四星卡；21-100 三星卡
   if (randomCard < 33) {
-    outcomeCard.innerHTML = "抽中五星卡";
+    outcomeCard.innerHTML = "5 Stars!";
   } else if (34 <= randomCard < 66) {
-    outcomeCard.innerHTML = "抽中四星卡";
+    outcomeCard.innerHTML = "4 Stars!";
   } else if (67 <= randomCard <= 100) {
-    outcomeCard.innerHTML = "抽中三星卡";
+    outcomeCard.innerHTML = "3 Stars!";
   }
 });
 
@@ -282,11 +289,6 @@ function enterSend(j) {
 }
 
 function check() {
-  console.log(`我輸入的 ${input.value}`);
-  console.log(`是非數字嗎 ${isNaN(input.value)}`);
-  console.log(`有填資料嗎 ${Boolean(input.value.trim() === "")}`);
-  console.log(`新的最大數字 ${n2}`);
-  console.log(`新的最小數字 ${n1}`);
   while (true) {
     if (
       // 表單驗證，如果輸入的值去掉空格非數字、大於最大值、小於最小值都會出現警告訊息
@@ -295,11 +297,11 @@ function check() {
       input.value > n2 ||
       input.value < n1
     ) {
-      hint.innerText = `格式錯誤，請輸入 ${n1} - ${n2} 的數字`;
+      hint.innerText = `Format incorrect, please enter ${n1} - ${n2}`;
       break; // 記得要 break，否則會進入無窮迴圈
     } else if (input.value == ans) {
       // 要用兩個等於因為 input.value 是字串，只要值一樣就可以，三個等於是值和型別都一樣，或是用 parseInt() 先將 input.value 轉為數字
-      hint.innerText = "恭喜答對了！";
+      hint.innerText = "Correct!";
       location.reload();
       break;
     } else if (input.value > ans) {
@@ -310,7 +312,7 @@ function check() {
       // 如果使用者輸入的數字小於答案，那提示文字的最小值就要變成使用者輸入的數字
       n1 = input.value;
     }
-    hint.innerText = `請輸入 ${n1} - ${n2}  的數字`;
+    hint.innerText = `Please enter ${n1} - ${n2}`;
     break;
   }
   // 清空輸入的值
@@ -402,8 +404,7 @@ function addUp() {
     isNaN(addInput.value) ||
     addInput.value.trim() === ""
   ) {
-    finalNum.innerText = "格式錯誤，請輸入數字";
-    console.log("d");
+    finalNum.innerText = "Format incorrect, please enter a number";
   } else {
     finalNum.innerText = `ans：${addUpTo(parseInt(addInput.value))}`;
   }
